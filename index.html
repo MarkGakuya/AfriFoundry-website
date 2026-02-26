@@ -91,7 +91,7 @@
     }
 
     /* SHARED */
-    section { padding: 3.5rem 1.5rem; }
+    section { padding: 5rem 1.5rem; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
     .section-label { font-family: var(--mono); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.85rem; }
     .section-headline { font-family: var(--display); font-size: clamp(1.75rem,4vw,2.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1rem; }
@@ -152,23 +152,6 @@
     .chat-bubble.ai { align-self: flex-start; background: var(--surface); border: 1px solid var(--border); color: var(--text2); }
     .chat-bubble.ai strong { color: var(--orange); }
     .ai-label { font-family: var(--mono); font-size: 0.6rem; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
-
-    /* Demo conversation accordion */
-    .demo-toggle-btn {
-      width: 100%; background: var(--bg2); border: none; border-top: 1px solid var(--border);
-      padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: space-between;
-      cursor: pointer; color: var(--text3); font-family: var(--mono); font-size: 0.65rem;
-      letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s, background 0.2s;
-    }
-    .demo-toggle-btn:hover { color: var(--text); background: var(--surface); }
-    .demo-toggle-icon {
-      width: 20px; height: 20px; border-radius: 50%; background: rgba(249,115,22,0.1);
-      border: 1px solid rgba(249,115,22,0.25); display: flex; align-items: center; justify-content: center;
-      color: var(--orange); font-size: 0.7rem; transition: transform 0.25s;
-    }
-    .demo-toggle-btn.open .demo-toggle-icon { transform: rotate(45deg); }
-    .demo-collapsible { display: none; }
-    .demo-collapsible.open { display: block; }
 
     /* FOUNDING 100 */
     #founding { background: var(--bg2); }
@@ -470,7 +453,6 @@
     /* Responsive footer */
     @media (max-width: 900px) {
       .footer-cols { grid-template-columns: 1fr 1fr; }
-      .footer-col:last-child { grid-column: 1 / -1; border-right: none; border-top: 1px solid rgba(255,255,255,0.05); }
     }
     @media (max-width: 768px) {
       .footer-hero { padding: 1.25rem 1.5rem; flex-wrap: nowrap; gap: 1rem; }
@@ -482,15 +464,12 @@
       .footer-cols { grid-template-columns: 1fr 1fr; }
       .footer-col { padding: 1.25rem; }
       .footer-bar { padding: 0.85rem 1.25rem; }
-      .footer-bar-left { flex-wrap: wrap; gap: 0.4rem 0.75rem; }
     }
     @media (max-width: 480px) {
       .footer-hero { flex-wrap: nowrap; align-items: flex-start; }
-      .footer-cols { grid-template-columns: 1fr; }
-      .footer-col { padding: 1rem; border-right: none !important; border-top: 1px solid rgba(255,255,255,0.05); }
-      .footer-col:first-child { border-top: none; }
-      .footer-bar { flex-direction: column; align-items: flex-start; }
-      .footer-bar-right { flex-wrap: wrap; gap: 0.75rem; }
+      .footer-cols { grid-template-columns: 1fr 1fr; }
+      .footer-col { padding: 1rem; }
+      .footer-col:last-child { grid-column: 1/-1; border-top: 1px solid rgba(255,255,255,0.05); }
     }
     .social-link { width: 32px; height: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text3); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
     .social-link:hover { border-color: var(--orange); color: var(--orange); }
@@ -686,27 +665,21 @@
             <div class="ai-spots">Only 16 spots remaining</div>
           </div>
         </div>
-        <button class="demo-toggle-btn" id="demoToggle" aria-expanded="false">
-          <span>See a real conversation example</span>
-          <div class="demo-toggle-icon">+</div>
-        </button>
-        <div class="demo-collapsible" id="demoCollapsible">
-          <div class="demo-topbar">
-            <div class="demo-dot r"></div><div class="demo-dot y"></div><div class="demo-dot g"></div>
-            <span class="demo-title">AfriFoundry AI — Validation Session</span>
-            <span class="demo-url">ai.afrifoundry.com</span>
+        <div class="demo-topbar">
+          <div class="demo-dot r"></div><div class="demo-dot y"></div><div class="demo-dot g"></div>
+          <span class="demo-title">AfriFoundry AI — Validation Session</span>
+          <span class="demo-url">ai.afrifoundry.com</span>
+        </div>
+        <div class="demo-body">
+          <div class="chat-bubble user">I want to start a fresh juice bar in Nairobi targeting office workers. I have KES 80,000.</div>
+          <div>
+            <div class="ai-label">AfriFoundry AI</div>
+            <div class="chat-bubble ai"><strong>Office workers in Nairobi's CBD buy lunch between 12:30 and 1:30 PM. That's a 60-minute window. Your entire daily revenue depends on it.</strong><br><br>What happens on a rainy day in April? Nairobi gets heavy rain April–June. Do office workers walk out for juice when it's pouring?</div>
           </div>
-          <div class="demo-body">
-            <div class="chat-bubble user">I want to start a fresh juice bar in Nairobi targeting office workers. I have KES 80,000.</div>
-            <div>
-              <div class="ai-label">AfriFoundry AI</div>
-              <div class="chat-bubble ai"><strong>Office workers in Nairobi's CBD buy lunch between 12:30 and 1:30 PM. That's a 60-minute window. Your entire daily revenue depends on it.</strong><br><br>What happens on a rainy day in April? Nairobi gets heavy rain April–June. Do office workers walk out for juice when it's pouring?</div>
-            </div>
-            <div class="chat-bubble user">I'll offer premium quality and a loyalty program to differentiate.</div>
-            <div>
-              <div class="ai-label">AfriFoundry AI</div>
-              <div class="chat-bubble ai"><strong>Loyalty programs work when customers already trust you. You have zero trust on day one.</strong><br><br>Which is your actual customer — the KES 80K/month manager or the KES 35K/month clerk? Same building, very different behaviour end of month. Have you spoken to any of them yet?</div>
-            </div>
+          <div class="chat-bubble user">I'll offer premium quality and a loyalty program to differentiate.</div>
+          <div>
+            <div class="ai-label">AfriFoundry AI</div>
+            <div class="chat-bubble ai"><strong>Loyalty programs work when customers already trust you. You have zero trust on day one.</strong><br><br>Which is your actual customer — the KES 80K/month manager or the KES 35K/month clerk? Same building, very different behaviour end of month. Have you spoken to any of them yet?</div>
           </div>
         </div>
       </div>
@@ -1096,14 +1069,14 @@
           </div>
           <div class="faq-acc">
             <button class="faq-acc-btn"><span class="faq-acc-icon">📧</span><span class="faq-acc-q">How do I get support?</span><span class="faq-acc-arrow">+</span></button>
-            <div class="faq-acc-body"><p>Email <a href="/cdn-cgi/l/email-protection#8dfef8fdfde2fff9cdecebffe4ebe2f8e3e9fff4a3eee2e0"><span class="__cf_email__" data-cfemail="0a797f7a7a65787e4a6b6c78636c657f646e787324696567">[email&#160;protected]</span></a> for general help, or <a href="/cdn-cgi/l/email-protection#1e7f775e7f786c7778716b707a6c67307d7173"><span class="__cf_email__" data-cfemail="33525a735255415a555c465d57414a1d505c5e">[email&#160;protected]</span></a> for AfriFoundry AI. We respond within 24 hours.</p></div>
+            <div class="faq-acc-body"><p>Email <a href="mailto:support@afrifoundry.com">support@afrifoundry.com</a> for general help, or <a href="mailto:ai@afrifoundry.com">ai@afrifoundry.com</a> for AfriFoundry AI. We respond within 24 hours.</p></div>
           </div>
         </div>
         <div class="faq-show-more-wrap">
           <button class="faq-show-more-btn" id="faqShowMore">Show more questions ↓</button>
         </div>
       </div>
-      <div class="faq-contact-note fade-in" style="margin-top:1.5rem;">More questions? Email <a href="/cdn-cgi/l/email-protection#e0939590908f9294a081869289868f958e849299ce838f8d"><span class="__cf_email__" data-cfemail="added8ddddc2dfd9edcccbdfc4cbc2d8c3c9dfd483cec2c0">[email&#160;protected]</span></a> — we read every message.</div>
+      <div class="faq-contact-note fade-in" style="margin-top:1.5rem;">More questions? Email <a href="mailto:support@afrifoundry.com">support@afrifoundry.com</a> — we read every message.</div>
     </div>
   </section>
 
@@ -1151,9 +1124,9 @@
         <!-- Col 2: Contact + Follow -->
         <div class="footer-col">
           <div class="footer-col-label">Contact</div>
-          <a href="/cdn-cgi/l/email-protection#0a797f7a7a65787e4a6b6c78636c657f646e787324696567"><span class="__cf_email__" data-cfemail="65161015150a1711250403170c030a100b01171c4b060a08">[email&#160;protected]</span></a>
-          <a href="/cdn-cgi/l/email-protection#e98880a9888f9b808f869c878d9b90c78a8684"><span class="__cf_email__" data-cfemail="1071795071766279767f657e7462693e737f7d">[email&#160;protected]</span></a>
-          <a href="/cdn-cgi/l/email-protection#0c6d686165624c6d6a7e656a637962687e75226f6361"><span class="__cf_email__" data-cfemail="8feeebe2e6e1cfeee9fde6e9e0fae1ebfdf6a1ece0e2">[email&#160;protected]</span></a>
+          <a href="mailto:support@afrifoundry.com">support@afrifoundry.com</a>
+          <a href="mailto:ai@afrifoundry.com">ai@afrifoundry.com</a>
+          <a href="mailto:admin@afrifoundry.com">admin@afrifoundry.com</a>
           <div class="footer-col-sub">Follow</div>
           <a href="https://twitter.com/afrifoundry" target="_blank">Twitter / X</a>
           <a href="https://linkedin.com/company/afrifoundry" target="_blank">LinkedIn</a>
@@ -1164,7 +1137,7 @@
             <a href="https://linkedin.com/company/afrifoundry" target="_blank" class="footer-social-btn" aria-label="LinkedIn">
               <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </a>
-            <a href="/cdn-cgi/l/email-protection#2655535656495452664740544f4049534842545f0845494b" class="footer-social-btn" aria-label="Email">
+            <a href="mailto:support@afrifoundry.com" class="footer-social-btn" aria-label="Email">
               <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </a>
           </div>
@@ -1210,23 +1183,11 @@
     <div class="toast-msg">Only 16 spots left. Founding members get the best deal — guaranteed.</div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
-
-    // Demo conversation accordion
-    const demoToggle = document.getElementById('demoToggle');
-    const demoCollapsible = document.getElementById('demoCollapsible');
-    if (demoToggle && demoCollapsible) {
-      demoToggle.addEventListener('click', () => {
-        const isOpen = demoCollapsible.classList.toggle('open');
-        demoToggle.classList.toggle('open', isOpen);
-        demoToggle.setAttribute('aria-expanded', isOpen);
-        demoToggle.querySelector('span').textContent = isOpen ? 'Hide conversation example' : 'See a real conversation example';
-      });
-    }
 
     // What We Do accordion
     document.querySelectorAll('.accordion-btn').forEach(btn => {
@@ -1287,4 +1248,28 @@
 
     // FAQ accordion
     document.querySelectorAll('.faq-acc-btn').forEach(btn => {
-      btn.addEventListener(
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-acc').forEach(a => a.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // FAQ show more
+    const faqShowMore = document.getElementById('faqShowMore');
+    const faqHidden = document.getElementById('faqHidden');
+    if (faqShowMore && faqHidden) {
+      faqShowMore.addEventListener('click', () => {
+        faqHidden.classList.add('revealed');
+        faqShowMore.style.display = 'none';
+      });
+    }
+
+    // Scroll fade
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script><script>
+    const hambu
