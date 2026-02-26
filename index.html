@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AfriFoundry — Validation infrastructure for African innovation. Built on 10,000+ real datapoints from Kenyan markets. Now introducing AfriFoundry AI, the thinking partner that knows Africa." />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="AfriFoundry — Validation infrastructure for African innovation. Built on 10,000+ real datapoints from Nairobi, Mombasa, Gikomba, Kongowea and Likoni markets. AfriFoundry AI is the thinking partner built for African entrepreneurs." />
   <meta property="og:title" content="AfriFoundry — Validation Infrastructure for African Innovation" />
-  <meta property="og:description" content="We built the data infrastructure African entrepreneurs deserve. Ground truth from Gikomba, Kongowea, Likoni. Now introducing AfriFoundry AI — the thinking partner that knows Africa." />
+  <meta property="og:description" content="Ground truth from Gikomba, Kongowea, and Likoni. 10,000+ real Kenyan market datapoints. Now introducing AfriFoundry AI — the thinking partner that knows Africa." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AfriFoundry — Validation Infrastructure for African Innovation" />
-  <meta name="twitter:description" content="Ground truth from Gikomba, Kongowea, and Likoni. Built for African entrepreneurs." />
+  <meta name="twitter:description" content="Ground truth from Gikomba, Kongowea, and Likoni. Built for African entrepreneurs in Nairobi, Mombasa and beyond." />
   <meta name="twitter:image" content="logo.png" />
+  <meta name="keywords" content="African startup validation, Nairobi entrepreneur tools, Mombasa market data, Kenya business validation, AfriFoundry AI, African innovation, Gikomba market data, Kongowea, Kenyan startup, African founder" />
   <link rel="icon" type="image/png" href="logo.png" />
   <title>AfriFoundry — Validation Infrastructure for African Innovation</title>
 
@@ -21,97 +23,40 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --orange:     #F97316;
-      --orange-dim: #c45a0a;
-      --green:      #10B981;
-      --gold:       #F59E0B;
-      --bg:         #080C18;
-      --bg2:        #0E1525;
-      --surface:    #141D2E;
-      --surface2:   #1C2840;
-      --border:     #263247;
-      --border2:    #2E3D56;
-      --text:       #FFFFFF;
-      --text2:      #C4D0E3;
-      --text3:      #7A91B0;
-      --mono:       'JetBrains Mono', monospace;
-      --sans:       'DM Sans', sans-serif;
-      --display:    'Syne', sans-serif;
+      --orange:#F97316; --orange-dim:#c45a0a; --green:#10B981; --gold:#F59E0B;
+      --bg:#080C18; --bg2:#0E1525; --surface:#141D2E; --surface2:#1C2840;
+      --border:#263247; --border2:#2E3D56; --text:#FFFFFF; --text2:#C4D0E3; --text3:#7A91B0;
+      --mono:'JetBrains Mono',monospace; --sans:'DM Sans',sans-serif; --display:'Syne',sans-serif;
     }
-
     html { scroll-behavior: smooth; }
     body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
-    /* ─── NAV ─── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1rem 2rem;
-      background: rgba(8,12,24,0.88); backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(38,50,71,0.5);
-    }
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: rgba(8,12,24,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(38,50,71,0.5); }
     .nav-logo { display: inline-flex; align-items: center; text-decoration: none; }
     .nav-logo img { height: 32px; width: auto; display: block; }
     .nav-links { display: flex; gap: 1.75rem; align-items: center; list-style: none; }
     .nav-links a { color: var(--text3); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--text); }
-    .nav-ai-pill {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      color: var(--orange) !important;
-      border: 1px solid rgba(249,115,22,0.35); padding: 0.4rem 0.9rem;
-      border-radius: 6px; font-weight: 600 !important; font-size: 0.82rem !important;
-      transition: background 0.2s, border-color 0.2s !important;
-    }
+    .nav-ai-pill { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--orange) !important; border: 1px solid rgba(249,115,22,0.35); padding: 0.4rem 0.9rem; border-radius: 6px; font-weight: 600 !important; font-size: 0.82rem !important; transition: background 0.2s, border-color 0.2s !important; }
     .nav-ai-pill:hover { background: rgba(249,115,22,0.08); border-color: var(--orange) !important; }
     .live-dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; }
     @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text2); border-radius: 2px; }
 
-    /* ─── HERO ─── */
-    #hero {
-      min-height: 100vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 8rem 1.5rem 5rem;
-      position: relative; overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(249,115,22,0.1) 0%, transparent 70%),
-                  radial-gradient(ellipse 40% 40% at 85% 90%, rgba(16,185,129,0.05) 0%, transparent 60%), #080C18;
-    }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(38,50,71,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(38,50,71,0.22) 1px, transparent 1px);
-      background-size: 64px 64px;
-      mask-image: radial-gradient(ellipse 90% 65% at 50% 0%, black 0%, transparent 80%);
-    }
+    /* HERO */
+    #hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 1.5rem 5rem; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(249,115,22,0.1) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 85% 90%, rgba(16,185,129,0.05) 0%, transparent 60%), #080C18; }
+    .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(38,50,71,0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(38,50,71,0.22) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 90% 65% at 50% 0%, black 0%, transparent 80%); }
     .hero-content { position: relative; z-index: 2; max-width: 820px; }
-    .hero-company-pill {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
-      color: var(--text3); font-family: var(--mono); font-size: 0.68rem;
-      letter-spacing: 0.12em; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.75rem;
-    }
+    .hero-company-pill { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: var(--text3); font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.75rem; }
     .hero-company-pill strong { color: var(--text2); font-weight: 500; }
-    .hero-headline {
-      font-family: var(--display);
-      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-      font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 1.25rem;
-    }
+    .hero-headline { font-family: var(--display); font-size: clamp(2.4rem,5.5vw,4.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 1.25rem; }
     .hero-headline em { font-style: normal; background: linear-gradient(135deg, var(--orange), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-sub { font-size: clamp(1rem, 2.2vw, 1.15rem); color: var(--text2); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.75; }
-
-    /* AfriFoundry AI launch card — clearly a product announcement */
-    .hero-product-card {
-      display: inline-flex; align-items: center; gap: 2rem;
-      background: var(--surface); border: 1px solid var(--border2);
-      border-top: 2px solid var(--orange); border-radius: 12px;
-      padding: 1.4rem 2rem; margin-bottom: 2.5rem;
-      text-align: left; flex-wrap: wrap; justify-content: center;
-    }
+    .hero-sub { font-size: clamp(1rem,2.2vw,1.15rem); color: var(--text2); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.75; }
+    .hero-product-card { display: inline-flex; align-items: center; gap: 2rem; background: var(--surface); border: 1px solid var(--border2); border-top: 2px solid var(--orange); border-radius: 12px; padding: 1.4rem 2rem; margin-bottom: 2.5rem; text-align: left; flex-wrap: wrap; justify-content: center; }
     .product-card-left { display: flex; flex-direction: column; gap: 0.2rem; }
     .product-eyebrow { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: 0.2rem; }
     .product-name { font-family: var(--display); font-size: 1.3rem; font-weight: 800; color: var(--text); }
@@ -119,15 +64,7 @@
     .product-card-divider { width: 1px; height: 50px; background: var(--border); flex-shrink: 0; }
     .product-card-right { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start; }
     .product-url { font-family: var(--mono); font-size: 0.65rem; color: var(--text3); }
-
-    .btn-orange {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: linear-gradient(135deg, var(--orange), #e8650a); color: white;
-      font-family: var(--sans); font-weight: 600; font-size: 0.9rem;
-      padding: 0.6rem 1.4rem; border-radius: 7px; text-decoration: none; border: none; cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 24px rgba(249,115,22,0.25);
-    }
+    .btn-orange { display: inline-flex; align-items: center; gap: 0.4rem; background: linear-gradient(135deg, var(--orange), #e8650a); color: white; font-family: var(--sans); font-weight: 600; font-size: 0.9rem; padding: 0.6rem 1.4rem; border-radius: 7px; text-decoration: none; border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 0 24px rgba(249,115,22,0.25); }
     .btn-orange:hover { transform: translateY(-1px); box-shadow: 0 0 36px rgba(249,115,22,0.4); }
     .hero-bottom-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--surface2); color: var(--text); font-family: var(--sans); font-weight: 600; font-size: 0.9rem; padding: 0.7rem 1.5rem; border-radius: 8px; text-decoration: none; border: 1px solid var(--border2); cursor: pointer; transition: border-color 0.2s; }
@@ -137,16 +74,30 @@
     .hero-meta { font-family: var(--mono); font-size: 0.68rem; color: var(--text3); letter-spacing: 0.05em; opacity: 0.6; margin-top: 2rem; }
     .hero-meta span { opacity: 0.4; margin: 0 0.75rem; }
 
+    /* HOW IT WORKS */
+    #howitworks { background: var(--bg2); padding: 2.5rem 1.5rem; }
+    .steps-strip { display: flex; align-items: center; gap: 0; max-width: 860px; margin: 1.5rem auto 0; }
+    .step-pill { display: flex; align-items: center; gap: 0.85rem; flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; }
+    .step-num { font-family: var(--mono); font-size: 0.65rem; font-weight: 600; color: var(--orange); width: 22px; height: 22px; border: 1px solid rgba(249,115,22,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-num.s2 { color: var(--gold); border-color: rgba(245,158,11,0.3); }
+    .step-num.s3 { color: var(--green); border-color: rgba(16,185,129,0.3); }
+    .step-pill h3 { font-family: var(--display); font-size: 0.88rem; font-weight: 800; margin-bottom: 0.15rem; }
+    .step-pill p { font-size: 0.75rem; color: var(--text3); line-height: 1.4; margin: 0; }
+    .step-arrow { color: var(--border2); font-size: 1.1rem; padding: 0 0.5rem; flex-shrink: 0; }
+    @media (max-width: 768px) {
+      .steps-strip { flex-direction: column; gap: 0.5rem; }
+      .step-arrow { transform: rotate(90deg); padding: 0; font-size: 0.9rem; opacity: 0.5; }
+      .step-pill { width: 100%; }
+    }
 
-
-    /* ─── SHARED SECTION STYLES ─── */
-    section { padding: 5rem 1.5rem; }
+    /* SHARED */
+    section { padding: 3.5rem 1.5rem; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
     .section-label { font-family: var(--mono); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.85rem; }
-    .section-headline { font-family: var(--display); font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .section-headline { font-family: var(--display); font-size: clamp(1.75rem,4vw,2.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1rem; }
     .section-sub { font-size: 1.05rem; color: var(--text2); line-height: 1.72; margin-bottom: 3rem; }
 
-    /* ─── ABOUT (AfriFoundry the company) ─── */
+    /* ABOUT */
     #about { background: var(--bg); }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .about-img { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
@@ -158,11 +109,11 @@
     .about-stat-num { font-family: var(--mono); font-size: 1.75rem; font-weight: 600; color: var(--orange); line-height: 1; margin-bottom: 0.25rem; }
     .about-stat-label { font-size: 0.8rem; color: var(--text2); }
 
-    /* ─── CREDIBILITY ─── */
+    /* CREDIBILITY */
     #credibility { background: var(--bg2); }
-    .cred-intro { max-width: 600px; margin-bottom: 3rem; }
-    .cred-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .cred-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
+    .cred-intro { max-width: 600px; margin-bottom: 1.75rem; }
+    .cred-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .cred-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem 1.4rem; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
     .cred-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--orange), var(--gold)); opacity: 0; transition: opacity 0.3s; }
     .cred-card:hover { border-color: var(--border2); transform: translateY(-4px); }
     .cred-card:hover::before { opacity: 1; }
@@ -172,45 +123,30 @@
     .cred-card p { color: var(--text2); font-size: 0.9rem; line-height: 1.62; }
     .big-number { font-family: var(--mono); font-size: 2.25rem; font-weight: 600; color: var(--orange); display: block; line-height: 1; margin-bottom: 0.2rem; }
 
-    /* ─── AFRIFOUNDRY AI SECTION ─── */
+    /* AI SECTION */
     #afrifoundry-ai { background: var(--bg); position: relative; overflow: hidden; }
     #afrifoundry-ai::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(249,115,22,0.06) 0%, transparent 65%); pointer-events: none; }
     .ai-section-label-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
     .ai-from-badge { background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.2); color: var(--text3); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; padding: 0.25rem 0.65rem; border-radius: 4px; }
     .ai-from-badge strong { color: var(--orange); }
-
-    /* Product panel */
-    .ai-panel {
-      background: var(--surface);
-      border: 1px solid var(--border2);
-      border-top: 3px solid var(--orange);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .ai-panel-header {
-      padding: 2.5rem 2.5rem 2rem;
-      display: flex; align-items: flex-start; justify-content: space-between;
-      gap: 2rem; flex-wrap: wrap;
-      border-bottom: 1px solid var(--border);
-    }
-    .ai-panel-identity {}
+    .ai-panel { background: var(--surface); border: 1px solid var(--border2); border-top: 3px solid var(--orange); border-radius: 16px; overflow: hidden; }
+    .ai-panel-header { padding: 2.5rem 2.5rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: nowrap; border-bottom: 1px solid var(--border); }
+    .ai-panel-header > div:first-child { flex: 1; min-width: 0; }
+    .ai-panel-actions { display: flex; flex-direction: column; gap: 0.65rem; align-items: flex-start; padding-top: 0; flex-shrink: 0; }
     .ai-panel-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.3); color: var(--orange); font-family: var(--mono); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em; padding: 0.28rem 0.75rem; border-radius: 100px; margin-bottom: 0.85rem; }
     .ai-panel-badge::before { content: ''; width: 5px; height: 5px; background: var(--orange); border-radius: 50%; animation: pulse 1.5s infinite; }
-    .ai-panel-name { font-family: var(--display); font-size: clamp(1.75rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 0.5rem; }
+    .ai-panel-name { font-family: var(--display); font-size: clamp(1.75rem,4vw,2.4rem); font-weight: 800; margin-bottom: 0.5rem; }
     .ai-panel-name em { font-style: normal; color: var(--orange); }
     .ai-panel-tagline { font-size: 1.05rem; color: var(--text2); max-width: 420px; line-height: 1.65; }
     .ai-panel-url { font-family: var(--mono); font-size: 0.68rem; color: var(--text3); margin-top: 0.75rem; }
     .ai-panel-url a { color: var(--orange); text-decoration: none; }
     .ai-panel-url a:hover { text-decoration: underline; }
-    .ai-panel-actions { display: flex; flex-direction: column; gap: 0.65rem; align-items: flex-start; padding-top: 0.5rem; }
     .ai-spots { font-family: var(--mono); font-size: 0.62rem; color: var(--text3); }
-
-    /* chat demo */
     .demo-topbar { background: var(--bg2); padding: 0.65rem 1rem; display: flex; align-items: center; gap: 0.5rem; }
     .demo-dot { width: 9px; height: 9px; border-radius: 50%; }
-    .demo-dot.r { background: #FF5F57; } .demo-dot.y { background: #FEBC2E; } .demo-dot.g { background: #28C840; }
+    .demo-dot.r{background:#FF5F57}.demo-dot.y{background:#FEBC2E}.demo-dot.g{background:#28C840}
     .demo-title { font-family: var(--mono); font-size: 0.65rem; color: var(--text3); margin-left: 0.5rem; }
-    .demo-url { font-family: var(--mono); font-size: 0.65rem; color: var(--text3); margin-left: auto; color: var(--orange); }
+    .demo-url { font-family: var(--mono); font-size: 0.65rem; color: var(--orange); margin-left: auto; }
     .demo-body { padding: 1.75rem 2.5rem; display: flex; flex-direction: column; gap: 1rem; background: var(--bg); }
     .chat-bubble { max-width: 85%; padding: 0.85rem 1.1rem; border-radius: 10px; font-size: 0.875rem; line-height: 1.58; }
     .chat-bubble.user { align-self: flex-end; background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.2); color: var(--text2); }
@@ -218,74 +154,145 @@
     .chat-bubble.ai strong { color: var(--orange); }
     .ai-label { font-family: var(--mono); font-size: 0.6rem; color: var(--green); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.2rem; }
 
-    /* ─── FOUNDING 100 ─── */
+    /* Demo accordion */
+    .demo-accordion-btn {
+      width: 100%; background: none; border: none; border-top: 1px solid var(--border);
+      padding: 0.9rem 1.5rem; display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; color: var(--text3); font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s, background 0.2s;
+    }
+    .demo-accordion-btn:hover { color: var(--text2); background: rgba(255,255,255,0.02); }
+    .demo-accordion-icon {
+      width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.22);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--orange); font-size: 0.75rem; transition: transform 0.25s;
+    }
+    .demo-accordion-btn.open .demo-accordion-icon { transform: rotate(45deg); }
+    .demo-accordion-body { display: none; }
+    .demo-accordion-body.open { display: block; }
+
+    /* FOUNDING 100 */
     #founding { background: var(--bg2); }
     .founding-inner { text-align: center; }
     .founding-for { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.65rem; color: var(--text3); letter-spacing: 0.1em; margin-bottom: 0.85rem; }
     .founding-for strong { color: var(--orange); }
-
-    /* Compact counter */
     .founding-counter { display: inline-flex; align-items: center; gap: 1.5rem; background: var(--surface); border: 1px solid var(--border2); border-radius: 10px; padding: 1rem 1.75rem; margin: 1.75rem auto; flex-wrap: wrap; justify-content: center; }
     .counter-number { font-family: var(--mono); font-size: 2.2rem; font-weight: 600; color: var(--green); line-height: 1; }
     .counter-denom { font-family: var(--mono); font-size: 1rem; color: var(--text3); }
     .counter-label { font-size: 0.75rem; color: var(--text2); margin-top: 0.3rem; }
     .counter-bar-wrap { width: 160px; }
     .counter-bar-bg { background: var(--border); border-radius: 100px; height: 4px; overflow: hidden; margin-bottom: 0.35rem; }
-    .counter-bar-fill { height: 100%; background: linear-gradient(90deg, var(--green), #0fa56e); width: 66%; border-radius: 100px; }
-
-    /* Benefits — horizontal compact strip */
+    .counter-bar-fill { height: 100%; background: linear-gradient(90deg, var(--green), #0fa56e); width: 84%; border-radius: 100px; }
     .founding-benefits { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; max-width: 700px; margin: 0 auto 2.5rem; }
     .benefit-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.55rem 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: 100px; }
     .benefit-check { color: var(--green); font-weight: 700; font-size: 0.8rem; }
     .benefit-item p { font-size: 0.8rem; color: var(--text2); line-height: 1; margin: 0; }
     .benefit-item strong { color: var(--text); font-size: 0.8rem; }
+    .founding-deadline { font-family: var(--mono); font-size: 0.72rem; color: var(--text3); margin-top: 1.1rem; line-height: 1.6; }
+    .after-100-note { max-width: 520px; margin: 1.5rem auto 0; background: rgba(249,115,22,0.05); border: 1px solid rgba(249,115,22,0.18); border-radius: 10px; padding: 1rem 1.4rem; }
+    .after-100-note p { font-size: 0.85rem; color: var(--text2); line-height: 1.6; }
+    .after-100-note strong { color: var(--orange); }
 
     /* ── FOUNDING WALL ── */
-    .founding-wall {
-      max-width: 800px; margin: 0 auto 2.5rem;
-      background: var(--bg);
-      border: 1px solid var(--border2);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-    .wall-header {
-      background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(245,158,11,0.04));
-      border-bottom: 1px solid var(--border);
-      padding: 1.1rem 1.75rem;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .wall-header-left { display: flex; align-items: center; gap: 0.65rem; }
-    .wall-live-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; }
-    .wall-title { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); font-weight: 600; }
-    .wall-count-badge { font-family: var(--mono); font-size: 0.6rem; color: var(--text3); background: var(--surface); border: 1px solid var(--border); border-radius: 100px; padding: 0.2rem 0.65rem; }
-    .wall-plaques {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-    }
-    .wall-plaque {
-      background: var(--bg);
-      padding: 1rem 1.1rem;
-      display: flex; flex-direction: column; gap: 0.2rem;
-      transition: background 0.2s;
+    .fw-section { max-width: 860px; margin: 0 auto; }
+
+    /* Document outer frame */
+    .fw-doc {
       position: relative;
+      background: linear-gradient(160deg, #0f1a2e 0%, #080C18 50%, #0d1628 100%);
+      border-radius: 18px; padding: 3px;
+      box-shadow: 0 0 60px rgba(249,115,22,0.08), 0 0 120px rgba(245,158,11,0.04);
     }
-    .wall-plaque:hover { background: var(--surface); }
-    .plaque-num { font-family: var(--mono); font-size: 0.55rem; color: var(--orange); font-weight: 600; letter-spacing: 0.08em; opacity: 0.7; }
-    .plaque-name { font-family: var(--display); font-size: 0.88rem; font-weight: 700; color: var(--text); line-height: 1.2; }
-    .plaque-location { font-family: var(--mono); font-size: 0.6rem; color: var(--text3); letter-spacing: 0.04em; }
-    .wall-more {
-      background: var(--surface); border-top: 1px solid var(--border);
-      padding: 0.75rem 1.75rem;
-      font-family: var(--mono); font-size: 0.62rem; color: var(--text3);
-      display: flex; align-items: center; gap: 0.5rem;
+    .fw-doc-border {
+      position: absolute; inset: 0; border-radius: 18px;
+      background: linear-gradient(135deg, rgba(249,115,22,0.6), rgba(245,158,11,0.3), rgba(38,50,71,0.8), rgba(16,185,129,0.2), rgba(249,115,22,0.4));
+      z-index: 0;
     }
-    .wall-more-dot { width: 4px; height: 4px; background: var(--text3); border-radius: 50%; opacity: 0.5; }
+    .fw-doc-inner {
+      position: relative; z-index: 1;
+      background: linear-gradient(160deg, #0c1525 0%, #080d1a 60%, #0b1422 100%);
+      border-radius: 16px; padding: 2rem 1.75rem 1.75rem; overflow: hidden;
+    }
+    .fw-doc-inner::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      opacity: 0.4; pointer-events: none;
+    }
+    .fw-doc-inner::after {
+      content: ''; position: absolute; inset: 10px;
+      border: 1px solid rgba(249,115,22,0.08); border-radius: 10px; pointer-events: none;
+    }
 
-    .founding-deadline { font-family: var(--mono); font-size: 0.72rem; color: var(--text3); margin-top: 1.1rem; line-height: 1.6; }
+    /* Document header */
+    .fw-doc-header { text-align: center; margin-bottom: 1.5rem; position: relative; }
+    .fw-seal { display: inline-flex; align-items: center; background: linear-gradient(135deg, rgba(249,115,22,0.12), rgba(245,158,11,0.06)); border: 1px solid rgba(249,115,22,0.3); border-radius: 100px; padding: 0.3rem 1.1rem; margin-bottom: 0.85rem; }
+    .fw-seal-text { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); font-weight: 600; }
+    .fw-doc-title { font-family: var(--display); font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 800; background: linear-gradient(135deg, #fff 0%, rgba(249,115,22,0.9) 50%, #F59E0B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.3rem; }
+    .fw-doc-sub { font-family: var(--mono); font-size: 0.6rem; color: var(--text3); letter-spacing: 0.12em; text-transform: uppercase; }
+    .fw-divider { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .fw-divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(249,115,22,0.3), transparent); }
+    .fw-divider-icon { color: var(--orange); font-size: 0.75rem; opacity: 0.7; }
 
-    /* ─── WHAT WE DO ─── */
+    /* Search bar inside document */
+    .fw-search-wrap { position: relative; margin-bottom: 1.25rem; }
+    .fw-search { width: 100%; background: rgba(255,255,255,0.03); border: 1px solid rgba(249,115,22,0.2); border-radius: 8px; color: var(--text); font-family: var(--mono); font-size: 0.75rem; padding: 0.6rem 1rem 0.6rem 2.1rem; outline: none; transition: border-color 0.2s; }
+    .fw-search:focus { border-color: rgba(249,115,22,0.5); background: rgba(255,255,255,0.05); }
+    .fw-search-ico { position: absolute; left: 0.65rem; top: 50%; transform: translateY(-50%); color: var(--text3); font-size: 0.75rem; pointer-events: none; }
+
+    /* Placard grid — 4 columns inside document */
+    .fw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; }
+
+    /* Individual placard */
+    .fw-card {
+      position: relative; overflow: hidden;
+      background: linear-gradient(145deg, #111c30 0%, #0a1120 100%);
+      border: 1px solid rgba(249,115,22,0.2);
+      border-radius: 8px; padding: 0.8rem 0.6rem 0.65rem;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .fw-card:hover { transform: translateY(-2px) scale(1.03); border-color: rgba(249,115,22,0.55); box-shadow: 0 6px 18px rgba(249,115,22,0.14); z-index: 2; }
+    .fw-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, rgba(249,115,22,0.7), rgba(245,158,11,0.4), transparent); opacity: 0; transition: opacity 0.2s; }
+    .fw-card:hover::before { opacity: 1; }
+    .fw-card::after { content: 'FOUNDING'; position: absolute; bottom: 3px; right: -6px; font-family: var(--mono); font-size: 0.38rem; font-weight: 600; letter-spacing: 0.14em; color: rgba(249,115,22,0.07); transform: rotate(-15deg); pointer-events: none; white-space: nowrap; }
+    .fw-card-num { font-family: var(--mono); font-size: 0.5rem; font-weight: 600; color: var(--orange); letter-spacing: 0.06em; opacity: 0.7; margin-bottom: 0.3rem; }
+    .fw-card-name { font-family: var(--display); font-size: 0.78rem; font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 0.2rem; }
+    .fw-card-city { font-family: var(--mono); font-size: 0.46rem; color: var(--text3); letter-spacing: 0.08em; text-transform: uppercase; }
+    .fw-card.reserved { background: rgba(8,12,24,0.4); border-color: rgba(38,50,71,0.3); opacity: 0.35; }
+    .fw-card.reserved .fw-card-name { color: var(--border2); font-style: italic; font-size: 0.62rem; font-weight: 400; }
+    .fw-card.reserved::after { display: none; }
+    .fw-card.fw-hidden { display: none; }
+
+    /* Search state: hide grid, show results */
+    .fw-grid.searching .fw-card { display: none; }
+    .fw-grid.searching .fw-card.match { display: block; }
+
+    /* No results */
+    .fw-no-results { display: none; grid-column: 1/-1; text-align: center; padding: 1.25rem; font-family: var(--mono); font-size: 0.68rem; color: var(--text3); }
+    .fw-no-results.visible { display: block; }
+
+    /* Show more */
+    .fw-more { text-align: center; margin-top: 0.5rem; font-family: var(--mono); font-size: 0.6rem; color: var(--text3); opacity: 0.6; }
+
+    /* Document footer */
+    .fw-doc-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.5rem; padding-top: 1.1rem; border-top: 1px solid rgba(249,115,22,0.12); flex-wrap: wrap; gap: 0.5rem; }
+    .fw-hallmark-text { font-family: var(--mono); font-size: 0.55rem; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.65; }
+    .fw-hallmark-text strong { color: var(--orange); opacity: 1; }
+    .fw-count-pill { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.2); border-radius: 100px; padding: 0.2rem 0.6rem; font-family: var(--mono); font-size: 0.57rem; color: var(--green); font-weight: 600; }
+    .fw-count-dot { width: 5px; height: 5px; background: var(--green); border-radius: 50%; animation: pulse 1.5s infinite; }
+
+    @media (max-width: 768px) {
+      .fw-grid { grid-template-columns: repeat(3, 1fr); gap: 0.45rem; }
+      .fw-doc-inner { padding: 1.5rem 1.1rem 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .fw-grid { grid-template-columns: repeat(3, 1fr); gap: 0.35rem; }
+      .fw-card { padding: 0.65rem 0.45rem 0.55rem; }
+      .fw-card-name { font-size: 0.7rem; }
+    }
+
+    /* WHAT WE DO */
     #whatwedo { background: var(--bg); }
     .whatwedo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .accordion { display: flex; flex-direction: column; gap: 0.65rem; }
@@ -302,28 +309,34 @@
     .whatwedo-img-cap { background: var(--surface); padding: 0.85rem 1.1rem; border-top: 1px solid var(--border); }
     .whatwedo-img-cap p { font-family: var(--mono); font-size: 0.65rem; color: var(--text3); }
 
-    /* ─── D.R.E.A.M. ─── */
+    /* DREAM + TEMIS ACCORDION */
     #dream { background: var(--bg2); }
-    .dream-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1rem; margin-top: 3rem; }
-    .dream-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.6rem 1.2rem; transition: transform 0.3s, border-color 0.3s; }
-    .dream-card:hover { transform: translateY(-4px); border-color: var(--border2); }
-    .dream-letter { font-family: var(--display); font-size: 2.75rem; font-weight: 800; background: linear-gradient(135deg, var(--orange), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; margin-bottom: 0.4rem; }
-    .dream-word { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: 0.65rem; }
-    .dream-card p { color: var(--text2); font-size: 0.83rem; line-height: 1.55; }
+    .fw-acc-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 2rem; max-width: 720px; }
+    .fw-acc-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.2s; }
+    .fw-acc-item.open { border-color: rgba(249,115,22,0.4); }
+    .fw-acc-btn { width: 100%; background: none; border: none; cursor: pointer; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; text-align: left; color: var(--text); }
+    .fw-acc-letter { font-family: var(--display); font-size: 1.75rem; font-weight: 800; background: linear-gradient(135deg, var(--orange), var(--gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; width: 36px; flex-shrink: 0; }
+    .fw-acc-head { flex: 1; }
+    .fw-acc-word { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: 0.15rem; }
+    .fw-acc-preview { font-family: var(--display); font-size: 0.95rem; font-weight: 700; color: var(--text); }
+    .fw-acc-chevron { color: var(--text3); font-size: 0.8rem; transition: transform 0.2s; flex-shrink: 0; }
+    .fw-acc-item.open .fw-acc-chevron { transform: rotate(90deg); }
+    .fw-acc-body { display: none; padding: 0 1.25rem 1.1rem 4.25rem; color: var(--text2); font-size: 0.88rem; line-height: 1.7; }
+    .fw-acc-item.open .fw-acc-body { display: block; }
 
-    /* ─── MISSION ─── */
+    /* MISSION */
     #mission { background: var(--bg); }
     .mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
     .mission-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 2.25rem 2rem; }
     .mission-card-icon { font-size: 1.75rem; margin-bottom: 0.85rem; }
     .mission-card h3 { font-family: var(--display); font-size: 1.4rem; font-weight: 800; margin-bottom: 0.85rem; }
     .mission-card p { color: var(--text2); line-height: 1.7; font-size: 0.92rem; }
-    .mission-launch { grid-column: 1 / -1; background: linear-gradient(135deg, rgba(249,115,22,0.07), rgba(245,158,11,0.03)); border: 1px solid rgba(249,115,22,0.22); border-radius: 12px; padding: 1.35rem 1.75rem; display: flex; align-items: center; gap: 1rem; }
+    .mission-launch { grid-column: 1/-1; background: linear-gradient(135deg,rgba(249,115,22,0.07),rgba(245,158,11,0.03)); border: 1px solid rgba(249,115,22,0.22); border-radius: 12px; padding: 1.35rem 1.75rem; display: flex; align-items: center; gap: 1rem; }
     .mission-launch-icon { font-size: 1.4rem; }
     .mission-launch p { color: var(--text2); font-size: 0.92rem; }
     .mission-launch strong { color: var(--orange); }
 
-    /* ─── FOUNDER ─── */
+    /* FOUNDER */
     #founder { background: var(--bg2); }
     .founder-card { max-width: 680px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: grid; grid-template-columns: 240px 1fr; }
     .founder-img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; display: block; }
@@ -337,169 +350,232 @@
     .founder-link { display: inline-flex; align-items: center; gap: 0.35rem; background: var(--surface2); border: 1px solid var(--border); color: var(--text2); font-size: 0.78rem; padding: 0.35rem 0.75rem; border-radius: 6px; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
     .founder-link:hover { border-color: var(--text3); color: var(--text); }
 
-    /* ─── FOOTER ─── */
-    footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 4rem 1.5rem 2rem; }
+    /* FAQ ACCORDION */
+    #faq { background: var(--bg); }
+    .faq-list { max-width: 720px; margin: 2.5rem auto 0; display: flex; flex-direction: column; gap: 0.5rem; }
+    .faq-acc { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.25s; }
+    .faq-acc.open { border-color: rgba(249,115,22,0.4); }
+    .faq-acc-btn {
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 0.85rem;
+      text-align: left; color: var(--text);
+    }
+    .faq-acc-icon { font-size: 1.1rem; flex-shrink: 0; }
+    .faq-acc-q { font-family: var(--display); font-size: 1rem; font-weight: 700; flex: 1; line-height: 1.3; }
+    .faq-acc-arrow {
+      width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--orange); font-size: 0.75rem;
+      transition: transform 0.25s, background 0.25s;
+    }
+    .faq-acc.open .faq-acc-arrow { transform: rotate(45deg); background: rgba(249,115,22,0.18); }
+    .faq-acc-body { display: none; padding: 0 1.5rem 1.4rem 3.7rem; }
+    .faq-acc.open .faq-acc-body { display: block; }
+    .faq-acc-body p { color: var(--text2); font-size: 0.9rem; line-height: 1.72; }
+    .faq-acc-body a { color: var(--orange); text-decoration: none; }
+    .faq-acc-body a:hover { text-decoration: underline; }
+    .faq-hidden { display: none; }
+    .faq-hidden.revealed { display: flex; flex-direction: column; gap: 0.5rem; }
+    .faq-show-more-wrap { text-align: center; margin-top: 1.25rem; }
+    .faq-show-more-btn {
+      background: none; border: 1px solid var(--border2); color: var(--text3);
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em;
+      padding: 0.6rem 1.4rem; border-radius: 100px; cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .faq-show-more-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .faq-contact-note { text-align: center; margin-top: 1.5rem; color: var(--text3); font-size: 0.85rem; }
+    .faq-contact-note a { color: var(--orange); text-decoration: none; }
+    .faq-contact-note a:hover { text-decoration: underline; }
+
+    /* ── FOOTER PREMIUM ── */
+    footer { background: #070b15; border-top: 3px solid rgba(249,115,22,0.25); padding: 0; }
     .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-    .footer-brand p { color: var(--text3); font-size: 0.875rem; line-height: 1.65; margin: 0.85rem 0 0.75rem; max-width: 280px; }
-    .footer-ai-pill { display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.2); color: var(--orange); font-size: 0.78rem; font-weight: 600; padding: 0.4rem 0.85rem; border-radius: 6px; text-decoration: none; font-family: var(--mono); letter-spacing: 0.04em; transition: background 0.2s; }
-    .footer-ai-pill:hover { background: rgba(249,115,22,0.14); }
-    .footer-subscribe { display: flex; gap: 0.5rem; margin-top: 1rem; }
-    .footer-subscribe input { flex: 1; min-width: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 0.55rem 0.9rem; color: var(--text); font-family: var(--sans); font-size: 0.875rem; outline: none; transition: border-color 0.2s; }
-    .footer-subscribe input:focus { border-color: var(--orange); }
-    .footer-subscribe input::placeholder { color: var(--text3); }
-    .footer-subscribe button { background: var(--orange); border: none; border-radius: 6px; padding: 0.55rem 1rem; color: white; font-family: var(--sans); font-weight: 600; font-size: 0.875rem; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
-    .footer-subscribe button:hover { background: var(--orange-dim); }
-    .footer-col h4 { font-family: var(--display); font-weight: 700; font-size: 0.9rem; margin-bottom: 1rem; }
-    .footer-col a { display: block; color: var(--text3); text-decoration: none; font-size: 0.85rem; margin-bottom: 0.55rem; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--text); }
-    .col-sublabel { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); margin-bottom: 0.5rem; margin-top: 1.1rem; opacity: 0.6; }
-    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-    .footer-bottom p { font-family: var(--mono); font-size: 0.68rem; color: var(--text3); }
-    .footer-socials { display: flex; gap: 0.6rem; }
+
+    /* Hero band */
+    .footer-hero {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 2.25rem 2rem; gap: 1.5rem; flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      background: linear-gradient(135deg, rgba(249,115,22,0.04) 0%, transparent 60%);
+    }
+    .footer-hero-left { display: flex; align-items: center; gap: 1.5rem; }
+    .footer-hero-logo img { height: 36px; }
+    .footer-hero-divider { width: 1px; height: 36px; background: var(--border); }
+    .footer-hero-tagline { font-family: var(--mono); font-size: 0.68rem; color: var(--text3); line-height: 1.6; letter-spacing: 0.02em; }
+    .footer-hero-tagline strong { color: var(--text2); display: block; font-size: 0.75rem; margin-bottom: 0.1rem; }
+    .footer-hero-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, var(--orange), #e8650a); color: white;
+      font-family: var(--sans); font-weight: 700; font-size: 0.82rem;
+      padding: 0.6rem 1.25rem; border-radius: 7px; text-decoration: none;
+      box-shadow: 0 0 20px rgba(249,115,22,0.2); transition: box-shadow 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .footer-hero-cta:hover { box-shadow: 0 0 32px rgba(249,115,22,0.4); transform: translateY(-1px); }
+
+    /* Columns */
+    .footer-cols {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-col {
+      padding: 2rem; border-right: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-col:last-child { border-right: none; }
+    .footer-col-label {
+      font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--orange); font-weight: 600;
+      margin-bottom: 1rem; display: flex; align-items: center; gap: 0.4rem;
+    }
+    .footer-col-label::after { content: ''; flex: 1; height: 1px; background: rgba(249,115,22,0.15); }
+    .footer-col a {
+      display: flex; align-items: center; gap: 0.4rem;
+      color: var(--text3); text-decoration: none; font-size: 0.82rem;
+      padding: 0.3rem 0; transition: color 0.2s, padding-left 0.2s;
+      border-bottom: none;
+    }
+    .footer-col a:hover { color: var(--text); padding-left: 0.3rem; }
+    .footer-col a.orange { color: rgba(249,115,22,0.8); }
+    .footer-col a.orange:hover { color: var(--orange); }
+    .footer-col-sub { font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--border2); margin: 1rem 0 0.5rem; }
+    .footer-newsletter-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.2);
+      color: var(--gold); font-size: 0.75rem; font-weight: 600;
+      padding: 0.5rem 0.9rem; border-radius: 7px; text-decoration: none;
+      margin-top: 0.75rem; transition: background 0.2s;
+    }
+    .footer-newsletter-pill:hover { background: rgba(245,158,11,0.12); color: var(--gold) !important; padding-left: 0.9rem !important; }
+    .footer-social-row { display: flex; gap: 0.5rem; margin-top: 1rem; }
+    .footer-social-btn {
+      width: 30px; height: 30px; border-radius: 6px;
+      background: var(--surface); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text3); text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .footer-social-btn:hover { border-color: var(--orange); color: var(--orange); padding-left: 0 !important; }
+
+    /* Bottom bar */
+    .footer-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem; flex-wrap: wrap; gap: 0.75rem;
+    }
+    .footer-bar-left { font-family: var(--mono); font-size: 0.6rem; color: var(--text3); display: flex; align-items: center; gap: 0.75rem; }
+    .footer-bar-dot { width: 3px; height: 3px; background: var(--border2); border-radius: 50%; }
+    .footer-bar-right { display: flex; gap: 1.25rem; }
+    .footer-bar-right a { font-family: var(--mono); font-size: 0.6rem; color: var(--text3); text-decoration: none; transition: color 0.2s; }
+    .footer-bar-right a:hover { color: var(--orange); }
+
+    /* Responsive footer */
+    @media (max-width: 900px) {
+      .footer-cols { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .footer-hero { padding: 1.25rem 1.5rem; flex-wrap: nowrap; gap: 1rem; }
+      .footer-hero-left { flex-shrink: 1; min-width: 0; }
+      .footer-hero-tagline { font-size: 0.62rem; }
+      .footer-hero-tagline strong { font-size: 0.68rem; }
+      .footer-hero-cta { font-size: 0.75rem; padding: 0.5rem 0.9rem; white-space: nowrap; flex-shrink: 0; }
+      .footer-hero-divider { display: none; }
+      .footer-cols { grid-template-columns: 1fr 1fr; }
+      .footer-col { padding: 1.25rem; }
+      .footer-bar { padding: 0.85rem 1.25rem; }
+    }
+    @media (max-width: 480px) {
+      .footer-hero { flex-wrap: nowrap; align-items: flex-start; }
+      .footer-cols { grid-template-columns: 1fr 1fr; }
+      .footer-col { padding: 1rem; }
+      .footer-col:last-child { grid-column: 1/-1; border-top: 1px solid rgba(255,255,255,0.05); }
+    }
     .social-link { width: 32px; height: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text3); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
     .social-link:hover { border-color: var(--orange); color: var(--orange); }
 
-    /* ─── UTILS ─── */
+    /* UTILS */
     .fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-    /* ─── RESPONSIVE ─── */
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .dream-grid { grid-template-columns: repeat(3,1fr); }
-      /* Reduce image heights on tablet so they don't overpower the layout */
+
       .about-img img { height: 280px; }
       .whatwedo-img img { height: 260px; }
-      /* Slightly smaller section headlines on tablet */
-      .section-headline { font-size: clamp(1.5rem, 3.5vw, 2.2rem); }
     }
     @media (max-width: 768px) {
-      #newsletter .section-inner > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
       nav { padding: 1rem 1.25rem; }
       .nav-links { display: none; }
       .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--bg2); border-bottom: 1px solid var(--border); padding: 1.5rem; gap: 1.25rem; list-style: none; }
       .hamburger { display: flex; }
       .about-grid,.whatwedo-grid,.mission-grid { grid-template-columns: 1fr; }
-      /* Show images on mobile — stack them below the text */
-      .about-img, .whatwedo-img { display: block; }
       .about-img img { height: 220px; }
       .whatwedo-img img { height: 200px; }
-      /* Remove sticky so it flows naturally when stacked */
       .whatwedo-img { position: static; }
       .cred-cards { grid-template-columns: 1fr; }
-      .dream-grid { grid-template-columns: 1fr 1fr; }
+
       .mission-launch { grid-column: auto; }
-      .founder-card { grid-template-columns: 1fr; gap: 1.25rem; background: transparent; border: none; border-radius: 0; overflow: visible; }
+      .founder-card { grid-template-columns: 1fr; background: transparent; border: none; border-radius: 0; overflow: visible; }
       .founder-img { height: 300px; object-position: center 40%; border-radius: 14px; border: 1px solid var(--border); }
       .founder-info { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem 1.4rem; }
-      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-      .founding-benefits { gap: 0.45rem; }
-      .wall-plaques { grid-template-columns: repeat(2, 1fr); }
-      .founding-counter { padding: 1.25rem; gap: 1rem; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
+
+      .wall-plaques { grid-template-columns: repeat(2,1fr); }
+
       .hero-product-card { flex-direction: column; gap: 1rem; text-align: center; }
       .product-card-divider { display: none; }
       .product-card-right { align-items: center; }
       .hero-bottom-ctas { flex-direction: column; align-items: center; }
       .btn-ghost,.btn-outline-green { width: 100%; max-width: 300px; justify-content: center; }
-      .ai-panel-header { flex-direction: column; gap: 1.5rem; }
+      .ai-panel-header { flex-direction: column; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
       .demo-body { padding: 1.25rem; }
-      /* Tighter headline sizes on mobile */
-      .hero-headline { font-size: clamp(1.65rem, 7vw, 2.4rem); }
-      .section-headline { font-size: clamp(1.35rem, 5vw, 1.75rem); }
-      /* Shrink large mono numbers so they don't overflow */
-      .counter-number { font-size: 2.5rem; }
-      .big-number { font-size: 1.75rem; }
+      .steps-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .steps-grid::before { display: none; }
+      #newsletter .section-inner > div { grid-template-columns: 1fr !important; gap: 2rem !important; }
     }
     @media (max-width: 480px) {
-      /* Keep 2 columns on small phones — don't let DREAM/TEMIS become a single tall stack */
-      .dream-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
       section { padding: 3.5rem 1.25rem; }
-      /* Even smaller fonts on small phones */
-      .hero-headline { font-size: clamp(1.45rem, 6.5vw, 1.9rem); }
-      .section-headline { font-size: clamp(1.2rem, 5.5vw, 1.5rem); }
+      .hero-headline { font-size: clamp(1.45rem,6.5vw,1.9rem); }
+      .section-headline { font-size: clamp(1.2rem,5.5vw,1.5rem); }
       .hero-sub { font-size: 0.92rem; }
-      .founder-img { height: 260px; object-position: center 40%; }
-      /* Keep AI panel readable */
-      .ai-panel-name { font-size: clamp(1.4rem, 6vw, 1.75rem); }
-      /* Countdown units fit on small screens — kept for safety */
+      .founder-img { height: 260px; }
+
     }
 
-    /* ─── DREAM / TEMIS CARD COMPACT MODE (mobile) ─── */
-    @media (max-width: 768px) {
-      .dream-grid { gap: 0.75rem; }
-      .dream-card { padding: 1.1rem 0.9rem; }
-      .dream-letter { font-size: 2rem; margin-bottom: 0.2rem; }
-      .dream-word { font-size: 0.58rem; margin-bottom: 0.4rem; }
-      .dream-card p { font-size: 0.78rem; line-height: 1.45; }
-    }
-    @media (max-width: 480px) {
-      .dream-card { padding: 0.9rem 0.75rem; }
-      .dream-letter { font-size: 1.65rem; }
-      .dream-word { font-size: 0.55rem; letter-spacing: 0.08em; }
-      .dream-card p { font-size: 0.74rem; }
-    }
-
-    /* Toast */
+    /* TOAST */
     .launch-toast { position: fixed; bottom: 1.5rem; right: 1.5rem; background: var(--surface2); border: 1px solid var(--border2); border-left: 3px solid var(--green); border-radius: 10px; padding: 1rem 1.25rem; max-width: 260px; z-index: 50; animation: slideIn 0.4s ease; }
-    @keyframes slideIn { from { transform: translateX(120%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes slideIn { from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1} }
     .toast-label { font-family: var(--mono); font-size: 0.62rem; color: var(--green); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.3rem; }
     .toast-msg { font-size: 0.82rem; color: var(--text2); line-height: 1.45; }
     .toast-close { position: absolute; top: 0.4rem; right: 0.5rem; background: none; border: none; color: var(--text3); cursor: pointer; font-size: 1rem; }
   </style>
 </head>
-
 <body>
 
-  <!-- ─── NAV ─── -->
+  <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#">
-      <img src="logo.png" alt="AfriFoundry" />
-    </a>
+    <a class="nav-logo" href="#"><img src="logo.png" alt="AfriFoundry" /></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
-      <li><a href="#whatwedo">What We Do</a></li>
       <li><a href="#dream">D.R.E.A.M.</a></li>
-      <li><a href="#temis">TEMIS</a></li>
-      <li><a href="#newsletter">Newsletter</a></li>
-      <li><a href="#mission">Mission</a></li>
       <li><a href="#founding">Founding 100</a></li>
-      <li>
-        <a href="https://ai.afrifoundry.com" target="_blank" class="nav-ai-pill">
-          <div class="live-dot"></div>AfriFoundry AI ↗
-        </a>
-      </li>
+      <li><a href="https://ai.afrifoundry.com" target="_blank" class="nav-ai-pill"><div class="live-dot"></div>AfriFoundry AI ↗</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- ─── HERO ─── -->
+  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
     <div class="hero-content fade-in visible">
-
-      <!-- AfriFoundry identity — the company comes first -->
-      <div class="hero-company-pill">
-        AFRIFOUNDRY &nbsp;·&nbsp; <strong>Validation Infrastructure for African Innovation</strong>
-      </div>
-
-      <h1 class="hero-headline">
-        We built the data infrastructure<br>
-        <em>African entrepreneurs deserve.</em>
-      </h1>
-      <p class="hero-sub">
-        Ground truth from Gikomba, Kongowea, and Likoni.
-        Real prices in KES. Real competition. Real constraints.
-        Not borrowed from global datasets. Not estimated.
-      </p>
-
-      <!-- AfriFoundry AI — introduced as a product launching from AfriFoundry -->
+      <div class="hero-company-pill">AFRIFOUNDRY &nbsp;·&nbsp; <strong>Validation Infrastructure for African Innovation</strong></div>
+      <h1 class="hero-headline">We built the data infrastructure<br><em>African entrepreneurs deserve.</em></h1>
+      <p class="hero-sub">Ground truth from Gikomba, Kongowea, and Likoni. Real prices in KES. Real competition. Real constraints. Not borrowed from global datasets. Not estimated.</p>
       <div class="hero-product-card">
         <div class="product-card-left">
-          <div class="product-eyebrow">New from AfriFoundry — Launching Feb 26, 2026</div>
+          <div class="product-eyebrow">From AfriFoundry — Launched Feb 26, 2026</div>
           <div class="product-name">AfriFoundry AI</div>
           <div class="product-tagline">The thinking partner that knows Africa.</div>
         </div>
@@ -509,21 +585,41 @@
           <a href="https://ai.afrifoundry.com" target="_blank" class="btn-orange">Try AfriFoundry AI →</a>
         </div>
       </div>
-
       <div class="hero-bottom-ctas">
         <a href="#about" class="btn-ghost">Learn About AfriFoundry</a>
-        <a href="#founding" class="btn-outline-green">Join Founding 100 — 66/100</a>
+        <a href="#founding" class="btn-outline-green">Join Founding 100 — 84/100</a>
       </div>
+      <div class="hero-meta">10,000+ real datapoints <span>·</span> Built in Kenya <span>·</span> Collected Jan–Feb 2026</div>
+    </div>
+  </section>
 
-      <div class="hero-meta">
-        10,000+ real datapoints <span>·</span> Built in Kenya <span>·</span> Collected Jan–Feb 2026
+  <!-- HOW IT WORKS -->
+  <section id="howitworks">
+    <div class="section-inner" style="max-width:900px;">
+      <div class="fade-in" style="text-align:center;margin-bottom:0;">
+        <div class="section-label">Simple. Fast. Honest.</div>
+        <h2 class="section-headline" style="font-size:clamp(1.2rem,3vw,1.75rem);margin-bottom:0;">How AfriFoundry AI Works</h2>
+      </div>
+      <div class="steps-strip fade-in">
+        <div class="step-pill">
+          <div class="step-num">1</div>
+          <div><h3>Share Your Idea</h3><p>Raw, rough — doesn't matter. Just tell the AI what you're building.</p></div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-pill">
+          <div class="step-num s2">2</div>
+          <div><h3>Get Challenged</h3><p>Real African market data. Hard questions. Assumptions tested.</p></div>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step-pill">
+          <div class="step-num s3">3</div>
+          <div><h3>Receive Your Report</h3><p>TEMIS score + honest feedback before you spend a shilling.</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-
-
-  <!-- ─── ABOUT AFRIFOUNDRY (the company) ─── -->
+  <!-- ABOUT -->
   <section id="about">
     <div class="section-inner">
       <div class="about-grid">
@@ -533,35 +629,21 @@
           <p style="color:var(--text2);font-size:0.97rem;line-height:1.75;margin-bottom:1.25rem;">We collect ground truth from real African markets — and use it to power tools that help African entrepreneurs make better decisions before they commit real money to untested assumptions.</p>
           <p style="color:var(--text2);font-size:0.97rem;line-height:1.75;">Every datapoint in our database was field-collected. Specific stalls in Gikomba. Specific rows in Kongowea. Specific terminals in Likoni. Real prices in KES. Real competitors. Real constraints — because that's how you build for Africa.</p>
           <div class="about-stats">
-            <div class="about-stat">
-              <div class="about-stat-num">10,000+</div>
-              <div class="about-stat-label">Real market datapoints, Jan–Feb 2026</div>
-            </div>
-            <div class="about-stat">
-              <div class="about-stat-num">4+</div>
-              <div class="about-stat-label">Kenyan markets field-surveyed</div>
-            </div>
-            <div class="about-stat">
-              <div class="about-stat-num">2035</div>
-              <div class="about-stat-label">Target: Bloomberg Terminal for Africa</div>
-            </div>
-            <div class="about-stat">
-              <div class="about-stat-num">1</div>
-              <div class="about-stat-label">Solo founder. All ground truth.</div>
-            </div>
+            <div class="about-stat"><div class="about-stat-num">10,000+</div><div class="about-stat-label">Real market datapoints, Jan–Feb 2026</div></div>
+            <div class="about-stat"><div class="about-stat-num">4+</div><div class="about-stat-label">Kenyan markets field-surveyed</div></div>
+            <div class="about-stat"><div class="about-stat-num">2035</div><div class="about-stat-label">Target: Bloomberg Terminal for Africa</div></div>
+            <div class="about-stat"><div class="about-stat-num">1</div><div class="about-stat-label">Solo founder. All ground truth.</div></div>
           </div>
         </div>
         <div class="about-img fade-in">
           <img src="aboutus.jpg" alt="AfriFoundry field research in Kenya" loading="lazy" />
-          <div class="about-img-cap">
-            <p>AfriFoundry field research — Mombasa markets, January 2026</p>
-          </div>
+          <div class="about-img-cap"><p>AfriFoundry field research — Mombasa markets, January 2026</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── DATA CREDIBILITY ─── -->
+  <!-- CREDIBILITY -->
   <section id="credibility">
     <div class="section-inner">
       <div class="cred-intro fade-in">
@@ -570,80 +652,58 @@
         <p style="color:var(--text2);font-size:1rem;line-height:1.72;">AfriFoundry collects data the hard way — in person, market by market — so everything built on top of it is actually grounded in African economic reality.</p>
       </div>
       <div class="cred-cards">
-        <div class="cred-card fade-in">
-          <div class="cred-icon">📍</div>
-          <div class="cred-title">Real Locations</div>
-          <h3>Kongowea.Gikomba. <br>Eastleigh. Likoni.</h3>
-          <p>Not "urban African markets." Specific stalls and rows where real buyers and sellers transact every day.</p>
-        </div>
-        <div class="cred-card fade-in">
-          <div class="cred-icon">💰</div>
-          <div class="cred-title">Real Prices</div>
-          <h3>KES, not USD.</h3>
-          <p>Stall rent, bale prices, transport costs, power bills — what things actually cost in Nairobi and Mombasa.</p>
-        </div>
-        <div class="cred-card fade-in">
-          <div class="cred-icon">📊</div>
-          <div class="cred-title">Field-Verified</div>
-          <span class="big-number">10,000+</span>
-          <p>Datapoints. Collected Jan–Feb 2026. Every entry verified on the ground. This is the foundation AfriFoundry builds on.</p>
-        </div>
+        <div class="cred-card fade-in"><div class="cred-icon">📍</div><div class="cred-title">Real Locations</div><h3>Kongowea. Gikomba.<br>Eastleigh. Likoni.</h3><p>Not "urban African markets." Specific stalls and rows where real buyers and sellers transact every day.</p></div>
+        <div class="cred-card fade-in"><div class="cred-icon">💰</div><div class="cred-title">Real Prices</div><h3>KES, not USD.</h3><p>Stall rent, bale prices, transport costs, power bills — what things actually cost in Nairobi and Mombasa.</p></div>
+        <div class="cred-card fade-in"><div class="cred-icon">📊</div><div class="cred-title">Field-Verified</div><span class="big-number">10,000+</span><p>Datapoints collected Jan–Feb 2026. Every entry verified on the ground. This is the foundation AfriFoundry builds on.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ─── AFRIFOUNDRY AI (product section) ─── -->
+  <!-- AFRIFOUNDRY AI -->
   <section id="afrifoundry-ai">
     <div class="section-inner">
       <div class="fade-in" style="max-width:600px;margin-bottom:2.5rem;">
-        <!-- Clear labeling: this is a product from the company -->
         <div class="ai-section-label-row">
           <div class="section-label" style="margin-bottom:0;">Our First Product</div>
           <div class="ai-from-badge">from <strong>AfriFoundry</strong></div>
         </div>
         <h2 class="section-headline">AfriFoundry AI</h2>
-        <p class="section-sub" style="margin-bottom:0;">Built on AfriFoundry's validation data, AfriFoundry AI is a thinking partner that knows Africa — not a generic AI with African data pasted in. It lives at <a href="https://ai.afrifoundry.com" target="_blank" style="color:var(--orange);text-decoration:none;">ai.afrifoundry.com</a>.</p>
+        <p class="section-sub" style="margin-bottom:0;">Built on AfriFoundry's validation data — not a generic AI with African data pasted in. It lives at <a href="https://ai.afrifoundry.com" target="_blank" style="color:var(--orange);text-decoration:none;">ai.afrifoundry.com</a>.</p>
       </div>
-
       <div class="ai-panel fade-in">
-        <!-- Header -->
         <div class="ai-panel-header">
-          <div class="ai-panel-identity">
-            <div class="ai-panel-badge">Launching February 26, 2026</div>
+          <div>
+            <div class="ai-panel-badge">Now Live</div>
             <div class="ai-panel-name"><em>AfriFoundry AI</em></div>
-            <p class="ai-panel-tagline">The thinking partner that knows Africa.<br>It doesn't just validate your idea — it challenges your assumptions with real African market data.</p>
+            <p class="ai-panel-tagline">The thinking partner that knows Africa. It challenges your assumptions with real market data.</p>
             <div class="ai-panel-url">Available at <a href="https://ai.afrifoundry.com" target="_blank">ai.afrifoundry.com</a></div>
           </div>
           <div class="ai-panel-actions">
             <a href="https://ai.afrifoundry.com" target="_blank" class="btn-orange" style="font-size:1rem;padding:0.75rem 1.75rem;">Try AfriFoundry AI →</a>
             <a href="#founding" class="btn-outline-green" style="font-size:0.9rem;padding:0.6rem 1.4rem;">Join Founding 100</a>
-            <div class="ai-spots">29 spots remaining in Founding 100</div>
+            <div class="ai-spots">Only 16 spots remaining</div>
           </div>
         </div>
-
-        <!-- Live demo -->
-        <div class="demo-topbar">
-          <div class="demo-dot r"></div><div class="demo-dot y"></div><div class="demo-dot g"></div>
-          <span class="demo-title">AfriFoundry AI — Validation Session</span>
-          <span class="demo-url">ai.afrifoundry.com</span>
-        </div>
-        <div class="demo-body">
-          <div class="chat-bubble user">I want to start a fresh juice bar in Nairobi targeting office workers. I have KES 80,000.</div>
-          <div>
-            <div class="ai-label">AfriFoundry AI</div>
-            <div class="chat-bubble ai">
-              Before we talk location or branding — <strong>office workers in Nairobi's CBD buy lunch between 12:30 and 1:30 PM. That's a 60-minute window. Your entire daily revenue depends on it.</strong><br><br>
-              What happens on a rainy day in April? Nairobi gets heavy rain April–June and October–November. Do office workers walk out for juice when it's pouring?<br><br>
-              And at KES 200 per cup — you're competing with the mama mboga outside their office at KES 50. End of month when money is tight, what does your customer choose?
+        <button class="demo-accordion-btn" id="demoAccBtn">
+          <span>See a sample conversation</span>
+          <div class="demo-accordion-icon">+</div>
+        </button>
+        <div class="demo-accordion-body" id="demoAccBody">
+          <div class="demo-topbar">
+            <div class="demo-dot r"></div><div class="demo-dot y"></div><div class="demo-dot g"></div>
+            <span class="demo-title">AfriFoundry AI — Validation Session</span>
+            <span class="demo-url">ai.afrifoundry.com</span>
+          </div>
+          <div class="demo-body">
+            <div class="chat-bubble user">I want to start a fresh juice bar in Nairobi targeting office workers. I have KES 80,000.</div>
+            <div>
+              <div class="ai-label">AfriFoundry AI</div>
+              <div class="chat-bubble ai"><strong>Office workers in Nairobi's CBD buy lunch between 12:30 and 1:30 PM. That's a 60-minute window. Your entire daily revenue depends on it.</strong><br><br>What happens on a rainy day in April? Nairobi gets heavy rain April–June. Do office workers walk out for juice when it's pouring?</div>
             </div>
-          </div>
-          <div class="chat-bubble user">I'll offer premium quality and a loyalty program to differentiate.</div>
-          <div>
-            <div class="ai-label">AfriFoundry AI</div>
-            <div class="chat-bubble ai">
-              <strong>Loyalty programs work when customers already trust you. You have zero trust on day one.</strong><br><br>
-              The premium angle is real — but only if your customer can afford premium consistently. Are you targeting the KES 80K/month manager or the KES 35K/month clerk? Same building, very different behaviour end of month.<br><br>
-              Which one is your actual customer — and have you spoken to any of them yet?
+            <div class="chat-bubble user">I'll offer premium quality and a loyalty program to differentiate.</div>
+            <div>
+              <div class="ai-label">AfriFoundry AI</div>
+              <div class="chat-bubble ai"><strong>Loyalty programs work when customers already trust you. You have zero trust on day one.</strong><br><br>Which is your actual customer — the KES 80K/month manager or the KES 35K/month clerk? Same building, very different behaviour end of month. Have you spoken to any of them yet?</div>
             </div>
           </div>
         </div>
@@ -651,218 +711,285 @@
     </div>
   </section>
 
-  <!-- ─── FOUNDING 100 ─── -->
+  <!-- FOUNDING 100 -->
   <section id="founding">
     <div class="section-inner">
       <div class="founding-inner">
         <div class="fade-in">
-          <!-- Clear: this is early access to AfriFoundry AI, not AfriFoundry generally -->
           <div class="founding-for">Early access to <strong>AfriFoundry AI</strong></div>
           <div class="section-label">Limited Program</div>
           <h2 class="section-headline">THE FOUNDING 100</h2>
           <p style="color:var(--text2);font-size:1.05rem;line-height:1.7;max-width:520px;margin:0 auto;">Be one of the first 100 people to access AfriFoundry AI and help shape how it understands African markets.</p>
         </div>
-
         <div class="founding-counter fade-in">
           <div>
             <div style="display:flex;align-items:baseline;gap:0.2rem;">
-              <div class="counter-number">71</div>
+              <div class="counter-number">84</div>
               <div class="counter-denom">/ 100</div>
             </div>
             <div class="counter-label">Spots Claimed</div>
           </div>
           <div class="counter-bar-wrap">
             <div class="counter-bar-bg"><div class="counter-bar-fill"></div></div>
-            <div style="font-family:var(--mono);font-size:0.62rem;color:var(--text3);">29 spots remaining</div>
+            <div style="font-family:var(--mono);font-size:0.62rem;color:var(--text3);">Only 16 spots remaining</div>
           </div>
         </div>
-
         <div class="founding-benefits fade-in">
-          <div class="benefit-item">
-            <div class="benefit-check">✓</div>
-            <p><strong>Shape the AI</strong></p>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-check">✓</div>
-            <p><strong>Direct Founder Line</strong></p>
-          </div>
-          <div class="benefit-item">
-            <div class="benefit-check">✓</div>
-            <p><strong>Founding Wall</strong></p>
-          </div>
+          <div class="benefit-item"><div class="benefit-check">✓</div><p><strong>Shape the AI</strong></p></div>
+          <div class="benefit-item"><div class="benefit-check">✓</div><p><strong>Direct Founder Line</strong></p></div>
+          <div class="benefit-item"><div class="benefit-check">✓</div><p><strong>Founding Wall</strong></p></div>
+          <div class="benefit-item"><div class="benefit-check">✓</div><p><strong>Best Deal. Guaranteed.</strong></p></div>
         </div>
 
-        <!-- ── FOUNDING WALL ── -->
-        <div class="founding-wall fade-in">
-          <div class="wall-header">
-            <div class="wall-header-left">
-              <div class="wall-live-dot"></div>
-              <div class="wall-title">Founding Members</div>
+        <!-- FOUNDING WALL -->
+        <div class="fw-section fade-in">
+          <div class="fw-doc">
+            <div class="fw-doc-border"></div>
+            <div class="fw-doc-inner">
+
+              <!-- Header -->
+              <div class="fw-doc-header">
+                <div class="fw-seal"><span class="fw-seal-text">AfriFoundry · Est. 2026 · Mombasa, Kenya</span></div>
+                <div class="fw-doc-title">FOUNDING 100</div>
+                <div class="fw-doc-sub">Roll of Honour — Africa's First Validators</div>
+              </div>
+              <div class="fw-divider"><div class="fw-divider-line"></div><div class="fw-divider-icon">◆</div><div class="fw-divider-line"></div></div>
+
+              <!-- Search -->
+              <div class="fw-search-wrap">
+                <span class="fw-search-ico">🔍</span>
+                <input class="fw-search" id="fwSearch" type="text" placeholder="Search your name..." autocomplete="off" />
+              </div>
+
+              <!-- Placard grid -->
+              <div class="fw-grid" id="fwGrid">
+                <div class="fw-card" data-name="morris k."><div class="fw-card-num">#001</div><div class="fw-card-name">Morris K.</div><div class="fw-card-city">NBI</div></div>
+            <div class="fw-card" data-name="moyi w."><div class="fw-card-num">#002</div><div class="fw-card-name">Moyi W.</div><div class="fw-card-city">NBI</div></div>
+            <div class="fw-card" data-name="daniel o."><div class="fw-card-num">#003</div><div class="fw-card-name">Daniel O.</div><div class="fw-card-city">MBA</div></div>
+            <div class="fw-card" data-name="diana w."><div class="fw-card-num">#004</div><div class="fw-card-name">Diana W.</div><div class="fw-card-city">MBA</div></div>
+            <div class="fw-card" data-name="yusra m."><div class="fw-card-num">#005</div><div class="fw-card-name">Yusra M.</div><div class="fw-card-city">MBA</div></div>
+            <div class="fw-card" data-name="kalii m."><div class="fw-card-num">#006</div><div class="fw-card-name">Kalii M.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card" data-name="frankline o."><div class="fw-card-num">#007</div><div class="fw-card-name">Frankline O.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card" data-name="joan e."><div class="fw-card-num">#008</div><div class="fw-card-name">Joan E.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card" data-name="ian m."><div class="fw-card-num">#009</div><div class="fw-card-name">Ian M.</div><div class="fw-card-city">MBA</div></div>
+            <div class="fw-card" data-name="james n."><div class="fw-card-num">#010</div><div class="fw-card-name">James N.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card" data-name="esther w."><div class="fw-card-num">#011</div><div class="fw-card-name">Esther W.</div><div class="fw-card-city">MBA</div></div>
+            <div class="fw-card" data-name="vivian w."><div class="fw-card-num">#012</div><div class="fw-card-name">Vivian W.</div><div class="fw-card-city">MBA</div></div>
+            <div class="fw-card" data-name="aidarus m."><div class="fw-card-num">#013</div><div class="fw-card-name">Aidarus M.</div><div class="fw-card-city">MBA</div></div>
+            <div class="fw-card" data-name="jeesi m."><div class="fw-card-num">#014</div><div class="fw-card-name">Jeesi M.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card" data-name="favour m."><div class="fw-card-num">#015</div><div class="fw-card-name">Favour M.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card" data-name="karani n."><div class="fw-card-num">#016</div><div class="fw-card-name">Karani N.</div><div class="fw-card-city">MBA</div></div>
+            <div class="fw-card" data-name="mike k."><div class="fw-card-num">#017</div><div class="fw-card-name">Mike K.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card" data-name="benard k."><div class="fw-card-num">#018</div><div class="fw-card-name">Benard K.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card" data-name="bernard o."><div class="fw-card-num">#019</div><div class="fw-card-name">Bernard O.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card" data-name="dennis k."><div class="fw-card-num">#020</div><div class="fw-card-name">Dennis K.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="john m."><div class="fw-card-num">#021</div><div class="fw-card-name">John M.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="ryan m."><div class="fw-card-num">#022</div><div class="fw-card-name">Ryan M.</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="michael w."><div class="fw-card-num">#023</div><div class="fw-card-name">Michael W.</div><div class="fw-card-city">MBA</div></div>
+            <div class="fw-card fw-hidden" data-name="salame k."><div class="fw-card-num">#024</div><div class="fw-card-name">Salame K.</div><div class="fw-card-city">MBA</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#025</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#026</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#027</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#028</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#029</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#030</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#031</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#032</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#033</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#034</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#035</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#036</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#037</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#038</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#039</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#040</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#041</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#042</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#043</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#044</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#045</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#046</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#047</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#048</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#049</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#050</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#051</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#052</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#053</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#054</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#055</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#056</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#057</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#058</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#059</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#060</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#061</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#062</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#063</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#064</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#065</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#066</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#067</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#068</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#069</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#070</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#071</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#072</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#073</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#074</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#075</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#076</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#077</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#078</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#079</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#080</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#081</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#082</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#083</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card fw-hidden" data-name="founding member"><div class="fw-card-num">#084</div><div class="fw-card-name">Founding Member</div><div class="fw-card-city">KE</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#085</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#086</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#087</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#088</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#089</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#090</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#091</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#092</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#093</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#094</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#095</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#096</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#097</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#098</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#099</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+            <div class="fw-card reserved fw-hidden" data-name=""><div class="fw-card-num">#100</div><div class="fw-card-name">Reserved</div><div class="fw-card-city">—</div></div>
+                <div class="fw-no-results" id="fwNoResults">No match found — your spot might still be open 👇</div>
+              </div>
+              <div class="fw-more" id="fwMore">Showing 20 of 84 members · Search to find yours</div>
+
+              <!-- Document footer -->
+              <div class="fw-doc-footer">
+                <div class="fw-hallmark-text">AfriFoundry &nbsp;·&nbsp; <strong>Mombasa, Kenya</strong> &nbsp;·&nbsp; Est. 2026</div>
+                <div class="fw-count-pill"><div class="fw-count-dot"></div>84 / 100 Claimed</div>
+              </div>
+
             </div>
-            <div class="wall-count-badge">71/ 100</div>
-          </div>
-          <div class="wall-plaques">
-            <div class="wall-plaque"><div class="plaque-num">#001</div><div class="plaque-name">Morris K.</div><div class="plaque-location">Nairobi, KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#002</div><div class="plaque-name">Moyi W.</div><div class="plaque-location">Naiobi, KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#003</div><div class="plaque-name">Daniel O.</div><div class="plaque-location">Mombasa, KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#004</div><div class="plaque-name">Diana W.</div><div class="plaque-location">Mombasa, KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#005</div><div class="plaque-name">Yusra M.</div><div class="plaque-location">Mombasa, KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#006</div><div class="plaque-name">Kalii M.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#007</div><div class="plaque-name">Frankline O.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#008</div><div class="plaque-name">Joan E.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#009</div><div class="plaque-name">Ian M.</div><div class="plaque-location">Mombasa, KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#010</div><div class="plaque-name">James N.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#011</div><div class="plaque-name">Esther W.</div><div class="plaque-location">Mombasa ,KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#012</div><div class="plaque-name">Vivian W.</div><div class="plaque-location">Mombasa ,KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#013</div><div class="plaque-name">Aidarus M.</div><div class="plaque-location">Mombasa ,KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#014</div><div class="plaque-name">Jeesi M.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#015</div><div class="plaque-name">Favour M.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#016</div><div class="plaque-name">Karani N.</div><div class="plaque-location">Mombasa ,KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#017</div><div class="plaque-name">Mike K.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#018</div><div class="plaque-name">Benard K.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#019</div><div class="plaque-name">Bernard O.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#020</div><div class="plaque-name">Dennis K.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#021</div><div class="plaque-name">John M.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#022</div><div class="plaque-name">Ryan M.</div><div class="plaque-location">Kenya</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#023</div><div class="plaque-name">Michael W.</div><div class="plaque-location">Mombasa ,KE</div></div>
-            <div class="wall-plaque"><div class="plaque-num">#024</div><div class="plaque-name">Salame K.</div><div class="plaque-location">Mombasa ,KE</div></div>
-          </div>
-          <div class="wall-more">
-            <div class="wall-more-dot"></div>
-            <div class="wall-more-dot"></div>
-            <div class="wall-more-dot"></div>
-            &nbsp;+76 more founding members across Africa
           </div>
         </div>
-
         <div class="fade-in">
-          <a href="https://tally.so/r/GxzR4k" target="_blank" class="btn-orange" style="font-size:1.05rem;padding:0.9rem 2.25rem;">Claim Your Spot →</a>
-          <div class="founding-deadline">Closes when full — or when AfriFoundry AI launches.<br>After that: paid plans only.</div>
+          <a href="https://tally.so/r/GxzR4k"lly.so/r/GxzR4k" target="_blank" class="btn-orange" style="font-size:1.05rem;padding:0.9rem 2.25rem;">Claim Your Spot →</a>
+          <div class="founding-deadline">Only 16 spots left. Closes at 100 — or when paid plans launch.</div>
+          <div class="after-100-note">
+            <p>🤝 <strong>Founding members get the best deal.</strong> Guaranteed. When paid plans launch in Q2 2026, founding members will have significantly better terms than anyone who joins after. The earlier you're in, the better your position.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── WHAT WE DO ─── -->
+  <!-- WHAT WE DO -->
   <section id="whatwedo">
     <div class="section-inner">
       <div class="whatwedo-grid">
         <div>
           <div class="section-label fade-in">How AfriFoundry Works</div>
           <h2 class="section-headline fade-in">Built on principles. Validated in the field.</h2>
-          <p class="section-sub fade-in">AfriFoundry is validation infrastructure — not a consultancy, not a generic AI tool. Every product and service we build is grounded in these principles.</p>
+          <p class="section-sub fade-in">AfriFoundry is validation infrastructure — not a consultancy, not a generic AI tool.</p>
           <div class="accordion fade-in">
             <div class="accordion-item active">
               <button class="accordion-btn"><span>Validation First</span><div class="accordion-icon">+</div></button>
-              <div class="accordion-body">Every idea goes through structured validation before resources are committed. Speed without direction is waste — especially in African markets where trust and relationships take time to build. We validate the assumption, not just the execution.</div>
+              <div class="accordion-body">Every idea goes through structured validation before resources are committed. Speed without direction is waste — especially in African markets where trust takes time to build.</div>
             </div>
             <div class="accordion-item">
               <button class="accordion-btn"><span>Ethics Before Testing</span><div class="accordion-icon">+</div></button>
-              <div class="accordion-body">We don't extract data from communities — we build with them. Every datapoint from Gikomba, Kongowea, and Likoni is gathered with consent and transparency. Our research ethics framework ensures communities benefit from the knowledge we collect.</div>
+              <div class="accordion-body">We don't extract data from communities — we build with them. Every datapoint from Gikomba, Kongowea, and Likoni is gathered with consent and transparency.</div>
             </div>
             <div class="accordion-item">
               <button class="accordion-btn"><span>AI-Powered Analysis</span><div class="accordion-icon">+</div></button>
-              <div class="accordion-body">AfriFoundry's infrastructure powers AfriFoundry AI — a thinking partner grounded in 10,000+ real African market datapoints collected Jan–Feb 2026. Real competitor density, real pricing, real market saturation. Ground truth, not estimates. Available at ai.afrifoundry.com.</div>
+              <div class="accordion-body">AfriFoundry AI is grounded in 10,000+ real African market datapoints. Real competitor density, real pricing, real market saturation. Available at ai.afrifoundry.com.</div>
             </div>
             <div class="accordion-item">
               <button class="accordion-btn"><span>Community-Ready Solutions</span><div class="accordion-icon">+</div></button>
-              <div class="accordion-body">A validated idea that doesn't fit the community it serves isn't a solution. We test for cultural fit, trust economics, and informal sector compatibility — not just market size and TAM calculations.</div>
+              <div class="accordion-body">A validated idea that doesn't fit the community it serves isn't a solution. We test for cultural fit, trust economics, and informal sector compatibility.</div>
             </div>
           </div>
         </div>
         <div class="whatwedo-img">
           <img src="whatwedo.jpg" alt="AfriFoundry field work" loading="lazy" />
-          <div class="whatwedo-img-cap">
-            <p>AfriFoundry field data collection — Mombasa, Kenya — Jan 2026</p>
-          </div>
+          <div class="whatwedo-img-cap"><p>AfriFoundry field data collection — Mombasa, Kenya — Jan 2026</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── D.R.E.A.M. ─── -->
+  <!-- D.R.E.A.M. -->
   <section id="dream">
     <div class="section-inner">
       <div class="fade-in" style="max-width:620px;">
         <div class="section-label">AfriFoundry's Methodology</div>
         <h2 class="section-headline">How D.R.E.A.M. Works</h2>
-        <p class="section-sub">The validation framework at the core of AfriFoundry's infrastructure — and the engine behind AfriFoundry AI. Five stages that turn raw ideas into market-tested solutions.</p>
+        <p style="color:var(--text2);font-size:1rem;line-height:1.7;margin-bottom:0;">The validation framework at the core of AfriFoundry's infrastructure.</p>
       </div>
-      <div class="dream-grid">
-        <div class="dream-card fade-in">
-          <div class="dream-letter">D</div>
-          <div class="dream-word">Discover</div>
-          <p>Surface the real opportunity. Uncover what the market actually needs — not what founders assume it needs.</p>
+      <div class="fw-acc-list fade-in">
+        <div class="fw-acc-item open">
+          <button class="fw-acc-btn"><span class="fw-acc-letter">D</span><div class="fw-acc-head"><div class="fw-acc-word">Discover</div><div class="fw-acc-preview">Surface the real opportunity.</div></div><span class="fw-acc-chevron">›</span></button>
+          <div class="fw-acc-body">What does the market actually need — not what the founder assumes? D is about getting out of your head and into the streets. Gikomba. Kongowea. Eastleigh. Real buyers, real pain, real gaps.</div>
         </div>
-        <div class="dream-card fade-in">
-          <div class="dream-letter">R</div>
-          <div class="dream-word">Refine</div>
-          <p>Strip the idea to its core. Remove assumptions that don't survive contact with real market data.</p>
+        <div class="fw-acc-item">
+          <button class="fw-acc-btn"><span class="fw-acc-letter">R</span><div class="fw-acc-head"><div class="fw-acc-word">Refine</div><div class="fw-acc-preview">Strip the idea to its core.</div></div><span class="fw-acc-chevron">›</span></button>
+          <div class="fw-acc-body">Remove every assumption that doesn't survive contact with real data. Most ideas die here — and that's the point. A refined idea is 10x more likely to launch successfully than a bloated one.</div>
         </div>
-        <div class="dream-card fade-in">
-          <div class="dream-letter">E</div>
-          <div class="dream-word">Ethics</div>
-          <p>Validate that the solution respects the community it serves. No extraction. No exploitation.</p>
+        <div class="fw-acc-item">
+          <button class="fw-acc-btn"><span class="fw-acc-letter">E</span><div class="fw-acc-head"><div class="fw-acc-word">Ethics</div><div class="fw-acc-preview">Build with the community, not on it.</div></div><span class="fw-acc-chevron">›</span></button>
+          <div class="fw-acc-body">Does the solution respect the community it serves? No extraction. No exploitation. AfriFoundry refuses to validate ideas that profit by taking from the very people they claim to help.</div>
         </div>
-        <div class="dream-card fade-in">
-          <div class="dream-letter">A</div>
-          <div class="dream-word">Analyze</div>
-          <p>Run the numbers against real market data. Competition, pricing, demand, margin. Ground truth.</p>
+        <div class="fw-acc-item">
+          <button class="fw-acc-btn"><span class="fw-acc-letter">A</span><div class="fw-acc-head"><div class="fw-acc-word">Analyze</div><div class="fw-acc-preview">Run the numbers against real market data.</div></div><span class="fw-acc-chevron">›</span></button>
+          <div class="fw-acc-body">Competition, pricing, demand, margin — against real African benchmarks. Not global averages. What does rent actually cost in Mombasa CBD? What margin is realistic in Gikomba? This is where AfriFoundry's 10,000+ datapoints become your competitive edge.</div>
         </div>
-        <div class="dream-card fade-in">
-          <div class="dream-letter">M</div>
-          <div class="dream-word">Manifest</div>
-          <p>Turn a validated idea into a community-ready launch. With confidence, not hope.</p>
+        <div class="fw-acc-item">
+          <button class="fw-acc-btn"><span class="fw-acc-letter">M</span><div class="fw-acc-head"><div class="fw-acc-word">Manifest</div><div class="fw-acc-preview">Turn validation into a launch-ready plan.</div></div><span class="fw-acc-chevron">›</span></button>
+          <div class="fw-acc-body">A validated idea with a clear path forward. Not just "this could work" — but here's how, here's where, here's what to do first. Confidence built on evidence, not hope.</div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ─── TEMIS FRAMEWORK ─── -->
-  <section id="temis">
+  <!-- TEMIS -->
+  <section id="temis" style="background:var(--bg2);">
     <div class="section-inner">
-      <div style="max-width:620px;margin-bottom:3rem;">
+      <div style="max-width:620px;margin-bottom:0;">
         <div class="section-label">AfriFoundry AI's Engine</div>
         <h2 class="section-headline">The TEMIS Framework</h2>
-        <p style="color:var(--text2);font-size:1rem;line-height:1.72;">TEMIS is the scoring engine that runs silently behind every AfriFoundry AI conversation. You experience it as a thinking partner asking the right questions. The full breakdown is revealed in your validation report.</p>
+        <p style="color:var(--text2);font-size:1rem;line-height:1.72;margin-bottom:0;">The silent scoring engine behind every AfriFoundry AI conversation. Revealed in your validation report.</p>
       </div>
-      <div class="dream-grid">
-        <div class="dream-card">
-          <div class="dream-letter">T</div>
-          <div class="dream-word">Technical</div>
-          <p>Can this actually be built given Kenya's infrastructure realities? Power, internet, logistics.</p>
+      <div class="fw-acc-list fade-in">
+        <div class="fw-acc-item open">
+          <button class="fw-acc-btn"><span class="fw-acc-letter">T</span><div class="fw-acc-head"><div class="fw-acc-word">Technical</div><div class="fw-acc-preview">Can this actually be built here?</div></div><span class="fw-acc-chevron">›</span></button>
+          <div class="fw-acc-body">Kenya's infrastructure has specific constraints — power reliability, mobile internet coverage, last-mile logistics. An idea that works in Nairobi CBD may not work in Kisumu. TEMIS scores the technical viability against real local realities, not ideal conditions.</div>
         </div>
-        <div class="dream-card">
-          <div class="dream-letter">E</div>
-          <div class="dream-word">Economic</div>
-          <p>Do the numbers work in real African conditions? Margins, pricing power, end-of-month behaviour.</p>
+        <div class="fw-acc-item">
+          <button class="fw-acc-btn"><span class="fw-acc-letter">E</span><div class="fw-acc-head"><div class="fw-acc-word">Economic</div><div class="fw-acc-preview">Do the numbers work in real African conditions?</div></div><span class="fw-acc-chevron">›</span></button>
+          <div class="fw-acc-body">Margins, pricing power, end-of-month consumer behaviour. African purchasing patterns are different — peak spending is 1st–5th of the month. Does your unit economics survive the last week of the month when wallets are thin?</div>
         </div>
-        <div class="dream-card">
-          <div class="dream-letter">M</div>
-          <div class="dream-word">Maintenance</div>
-          <p>Can this be sustained long-term? Supply chain stability, talent, ongoing operational costs.</p>
+        <div class="fw-acc-item">
+          <button class="fw-acc-btn"><span class="fw-acc-letter">M</span><div class="fw-acc-head"><div class="fw-acc-word">Maintenance</div><div class="fw-acc-preview">Can you sustain this long-term?</div></div><span class="fw-acc-chevron">›</span></button>
+          <div class="fw-acc-body">Supply chain reliability, talent availability, ongoing operational costs. Many African businesses survive launch but die at month 4 when founders discover the hidden cost of keeping things running. TEMIS stress-tests this before you invest.</div>
         </div>
-        <div class="dream-card">
-          <div class="dream-letter">I</div>
-          <div class="dream-word">Infrastructure</div>
-          <p>Does local infrastructure support this? Roads, power grid, mobile money, last-mile delivery.</p>
+        <div class="fw-acc-item">
+          <button class="fw-acc-btn"><span class="fw-acc-letter">I</span><div class="fw-acc-head"><div class="fw-acc-word">Infrastructure</div><div class="fw-acc-preview">Does local infrastructure support this?</div></div><span class="fw-acc-chevron">›</span></button>
+          <div class="fw-acc-body">Roads, power grid, mobile money penetration, cold chain, last-mile delivery. Infrastructure gaps that don't exist in a pitch deck become fatal on day one. TEMIS maps your idea against what actually exists on the ground.</div>
         </div>
-        <div class="dream-card">
-          <div class="dream-letter">S</div>
-          <div class="dream-word">Systemic</div>
-          <p>Does it fit the African ecosystem? Culture, trust, regulation, community dynamics.</p>
+        <div class="fw-acc-item">
+          <button class="fw-acc-btn"><span class="fw-acc-letter">S</span><div class="fw-acc-head"><div class="fw-acc-word">Systemic</div><div class="fw-acc-preview">Does it fit how Africa actually works?</div></div><span class="fw-acc-chevron">›</span></button>
+          <div class="fw-acc-body">Culture, trust dynamics, regulation, community structures, informal networks. Africa runs on relationships and trust. A solution that ignores how Kenyans actually make decisions — and who they trust — is a solution that won't get adopted.</div>
         </div>
-      </div>
-      <div style="margin-top:2rem;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--orange);border-radius:10px;padding:1.25rem 1.75rem;max-width:680px;">
-        <div style="font-family:var(--mono);font-size:0.62rem;color:var(--orange);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem;">How TEMIS works</div>
-        <p style="color:var(--text2);font-size:0.9rem;line-height:1.68;">TEMIS scores update silently during every conversation — guiding which assumptions AfriFoundry AI challenges next. You never see percentages. You just experience sharper, more relevant questions.</p>
       </div>
     </div>
   </section>
 
-  <!-- ─── THE VALIDATION POINT NEWSLETTER ─── -->
-  <section id="newsletter" style="background:var(--bg2);">
+  <!-- NEWSLETTER -->
+  <section id="newsletter">
     <div class="section-inner">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
         <div>
@@ -871,48 +998,37 @@
           <p style="color:var(--text2);font-size:1.05rem;line-height:1.72;margin-bottom:1.5rem;font-style:italic;">"The newsletter for founders who validate for context, not just function."</p>
           <p style="color:var(--text2);font-size:0.95rem;line-height:1.72;margin-bottom:2rem;">African market realities, validation frameworks, and real data insights — written for entrepreneurs building in Africa, not about Africa.</p>
           <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:2rem;">
-            <div style="font-family:var(--mono);font-size:2rem;font-weight:600;color:var(--green);">585</div>
+            <div style="font-family:var(--mono);font-size:2rem;font-weight:600;color:var(--green);">585+</div>
             <div style="color:var(--text2);font-size:0.875rem;">founders already reading</div>
           </div>
           <a href="https://www.linkedin.com/newsletters/the-validation-point-7401988315769634816" target="_blank" class="btn-orange">Read on LinkedIn →</a>
         </div>
         <div style="background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--gold);border-radius:12px;padding:2rem;">
-          <div style="font-family:var(--mono);font-size:0.62rem;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem;">Latest Edition 5 </div>
-          <div style="font-family:var(--display);font-size:1.2rem;font-weight:800;margin-bottom:0.75rem;">Africa just got its first Ai thinking partner</div>
-          <p style="color:var(--text2);font-size:0.875rem;line-height:1.65;margin-bottom:1.25rem;">Afrifoundry AI launches Feb 26. Here's what it does ,why it matters,and why the Founding 100 is almost gone.</p>
+          <div style="font-family:var(--mono);font-size:0.62rem;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem;">Latest — Edition 5</div>
+          <div style="font-family:var(--display);font-size:1.2rem;font-weight:800;margin-bottom:0.75rem;">Africa just got its first AI thinking partner</div>
+          <p style="color:var(--text2);font-size:0.875rem;line-height:1.65;margin-bottom:1.25rem;">AfriFoundry AI is live. Here's what it does, why it matters, and why the Founding 100 is almost gone.</p>
           <div style="font-family:var(--mono);font-size:0.65rem;color:var(--text3);">The Validation Point · LinkedIn Newsletter</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── MISSION ─── -->
-  <section id="mission">
+  <!-- MISSION -->
+  <section id="mission" style="background:var(--bg2);">
     <div class="section-inner">
-      <div class="fade-in" style="max-width:560px;margin-bottom:3rem;">
+      <div class="fade-in" style="max-width:560px;margin-bottom:1.75rem;">
         <div class="section-label">Mission & Vision</div>
         <h2 class="section-headline">Built for Africa. By Africans.</h2>
       </div>
       <div class="mission-grid">
-        <div class="mission-card fade-in">
-          <div class="mission-card-icon">🎯</div>
-          <h3>Our Mission</h3>
-          <p>To provide African innovators with the validation infrastructure they deserve — rooted in real local data, not global assumptions. Africa's next great companies will be built by people who understand African markets deeply. AfriFoundry gives them the tools to prove it.</p>
-        </div>
-        <div class="mission-card fade-in">
-          <div class="mission-card-icon">🔭</div>
-          <h3>Our Vision</h3>
-          <p>The Bloomberg Terminal for Africa by 2035. A data infrastructure that makes African market intelligence as accessible and trusted as financial data is in global markets. One dataset, one validated idea, one founder at a time.</p>
-        </div>
-        <div class="mission-launch fade-in">
-          <div class="mission-launch-icon">🚀</div>
-          <p>The first product powered by AfriFoundry's infrastructure: <strong>AfriFoundry AI</strong> — launching February 26, 2026 at <a href="https://ai.afrifoundry.com" target="_blank" style="color:var(--orange);text-decoration:none;">ai.afrifoundry.com</a></p>
-        </div>
+        <div class="mission-card fade-in"><div class="mission-card-icon">🎯</div><h3>Our Mission</h3><p>To provide African innovators with the validation infrastructure they deserve — rooted in real local data, not global assumptions. Africa's next great companies will be built by people who understand African markets deeply.</p></div>
+        <div class="mission-card fade-in"><div class="mission-card-icon">🔭</div><h3>Our Vision</h3><p>The Bloomberg Terminal for Africa by 2035. A data infrastructure that makes African market intelligence as accessible and trusted as financial data is in global markets. One validated idea at a time.</p></div>
+        <div class="mission-launch fade-in"><div class="mission-launch-icon">🚀</div><p>The first product powered by AfriFoundry's infrastructure: <strong>AfriFoundry AI</strong> — live now at <a href="https://ai.afrifoundry.com" target="_blank" style="color:var(--orange);text-decoration:none;">ai.afrifoundry.com</a></p></div>
       </div>
     </div>
   </section>
 
-  <!-- ─── FOUNDER ─── -->
+  <!-- FOUNDER -->
   <section id="founder">
     <div class="section-inner">
       <div class="fade-in" style="text-align:center;margin-bottom:3rem;">
@@ -930,15 +1046,13 @@
             <span class="founder-tag">Solo Founder</span>
           </div>
           <p style="color:var(--text2);font-size:0.88rem;line-height:1.68;margin-bottom:0.85rem;">Building Africa's validation infrastructure from the ground up — and AfriFoundry AI on top of it. Every datapoint in AfriFoundry's database was collected personally, from Gikomba stalls to Likoni ferry terminals.</p>
-          <blockquote class="founder-quote">
-            "I got tired of seeing African startups fail because they built for Silicon Valley, not for Likoni. So I'm building the data infrastructure that should have existed 10 years ago."
-          </blockquote>
+          <blockquote class="founder-quote">"I got tired of seeing African startups fail because they built for Silicon Valley, not for Likoni. So I'm building the data infrastructure that should have existed 10 years ago."</blockquote>
           <div class="founder-links">
             <a href="https://linkedin.com/in/markgakuya" target="_blank" class="founder-link">
               <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               LinkedIn
             </a>
-            <a href="/cdn-cgi/l/email-protection#fd909c8f96bd9c9b8f949b928893998f84d39e9290" class="founder-link">
+            <a href="/cdn-cgi/l/email-protection#5a393f353b3c28333c352f343e28231a3d373b333674393537" class="founder-link">
               <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Email Mark
             </a>
@@ -948,75 +1062,166 @@
     </div>
   </section>
 
-  <!-- ─── FOOTER ─── -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a class="nav-logo" href="#"><img src="logo.png" alt="AfriFoundry" style="height:32px;" /></a>
-          <p>Validation infrastructure for African innovation. Building toward the Bloomberg Terminal for Africa by 2035. 10,000+ datapoints and counting.</p>
-          <a href="https://ai.afrifoundry.com" target="_blank" class="footer-ai-pill">
-            <div class="live-dot" style="width:5px;height:5px;"></div>
-            AfriFoundry AI — ai.afrifoundry.com ↗
-          </a>
-          <div class="footer-subscribe">
-            <input type="email" placeholder="your@email.com" id="footerEmail" />
-            <button onclick="handleSubscribe()">Subscribe</button>
+  <!-- FAQ -->
+  <section id="faq" style="background:var(--bg2);">
+    <div class="section-inner">
+      <div class="fade-in" style="max-width:560px;margin-bottom:0.5rem;">
+        <div class="section-label">Common Questions</div>
+        <h2 class="section-headline">Your questions, answered.</h2>
+        <p style="color:var(--text2);font-size:1rem;line-height:1.7;">Before you share your idea with AfriFoundry AI, here's what you need to know.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-acc open">
+          <button class="faq-acc-btn"><span class="faq-acc-icon">🔒</span><span class="faq-acc-q">Who owns my idea after I share it?</span><span class="faq-acc-arrow">+</span></button>
+          <div class="faq-acc-body"><p>You do. Completely. AfriFoundry does not claim ownership, rights, or any interest in ideas you share. Your idea enters as yours and leaves as yours. Read our <a href="terms.html">Terms of Service</a>.</p></div>
+        </div>
+        <div class="faq-acc">
+          <button class="faq-acc-btn"><span class="faq-acc-icon">🤖</span><span class="faq-acc-q">Is this giving me investment advice?</span><span class="faq-acc-arrow">+</span></button>
+          <div class="faq-acc-body"><p>No. AfriFoundry AI is a validation thinking partner — not investment advice. Always do your own due diligence before committing money to any venture.</p></div>
+        </div>
+        <div class="faq-acc">
+          <button class="faq-acc-btn"><span class="faq-acc-icon">💾</span><span class="faq-acc-q">What data does AfriFoundry store?</span><span class="faq-acc-arrow">+</span></button>
+          <div class="faq-acc-body"><p>We store your account details and conversation history. We do not sell your data. Full details in our <a href="privacy.html">Privacy Policy</a>.</p></div>
+        </div>
+        <div class="faq-hidden" id="faqHidden">
+          <div class="faq-acc">
+            <button class="faq-acc-btn"><span class="faq-acc-icon">💰</span><span class="faq-acc-q">What deal do Founding 100 members get?</span><span class="faq-acc-arrow">+</span></button>
+            <div class="faq-acc-body"><p>Founding members are guaranteed the best deal AfriFoundry ever offers — significantly better terms than anyone who joins after. The exact structure will be announced when paid plans launch in Q2 2026. Get in now so you're covered.</p></div>
+          </div>
+          <div class="faq-acc">
+            <button class="faq-acc-btn"><span class="faq-acc-icon">🌍</span><span class="faq-acc-q">Do I need to be in Kenya?</span><span class="faq-acc-arrow">+</span></button>
+            <div class="faq-acc-body"><p>No. AfriFoundry AI is for African entrepreneurs wherever they are. Our current dataset is strongest for Kenyan markets, but useful for anyone building in or for Africa. We're expanding across the continent.</p></div>
+          </div>
+          <div class="faq-acc">
+            <button class="faq-acc-btn"><span class="faq-acc-icon">📧</span><span class="faq-acc-q">How do I get support?</span><span class="faq-acc-arrow">+</span></button>
+            <div class="faq-acc-body"><p>Email <a href="/cdn-cgi/l/email-protection#4c3f393c3c233e380c2d2a3e252a233922283e35622f2321"><span class="__cf_email__" data-cfemail="60131510100f12142001061209060f150e0412194e030f0d">[email&#160;protected]</span></a> for general help, or <a href="/cdn-cgi/l/email-protection#43222a032225312a252c362d27313a6d202c2e"><span class="__cf_email__" data-cfemail="d4b5bd94b5b2a6bdb2bba1bab0a6adfab7bbb9">[email&#160;protected]</span></a> for AfriFoundry AI. We respond within 24 hours.</p></div>
           </div>
         </div>
+        <div class="faq-show-more-wrap">
+          <button class="faq-show-more-btn" id="faqShowMore">Show more questions ↓</button>
+        </div>
+      </div>
+      <div class="faq-contact-note fade-in" style="margin-top:1.5rem;">More questions? Email <a href="/cdn-cgi/l/email-protection#d8abada8a8b7aaac98b9beaab1beb7adb6bcaaa1f6bbb7b5"><span class="__cf_email__" data-cfemail="e2919792928d9096a28384908b848d978c86909bcc818d8f">[email&#160;protected]</span></a> — we read every message.</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+
+      <!-- Hero band: logo + tagline + CTA -->
+      <div class="footer-hero">
+        <div class="footer-hero-left">
+          <div class="footer-hero-logo">
+            <a href="#"><img src="logo.png" alt="AfriFoundry" /></a>
+          </div>
+          <div class="footer-hero-divider"></div>
+          <div class="footer-hero-tagline">
+            <strong>Validation Infrastructure for African Innovation</strong>
+            10,000+ datapoints · Built in Kenya · Est. 2026
+          </div>
+        </div>
+        <a href="https://ai.afrifoundry.com" target="_blank" class="footer-hero-cta">
+          <div class="live-dot" style="width:5px;height:5px;background:white;"></div>
+          Try AfriFoundry AI →
+        </a>
+      </div>
+
+      <!-- 3 columns -->
+      <div class="footer-cols">
+
+        <!-- Col 1: Navigate -->
         <div class="footer-col">
-          <h4>AfriFoundry</h4>
+          <div class="footer-col-label">Navigate</div>
           <a href="#about">About Us</a>
           <a href="#credibility">Our Data</a>
           <a href="#whatwedo">What We Do</a>
           <a href="#dream">D.R.E.A.M. Method</a>
-          <a href="#mission">Mission & Vision</a>
+          <a href="#temis">TEMIS Framework</a>
+          <a href="#mission">Mission &amp; Vision</a>
           <a href="#founder">Our Founder</a>
-          <div class="col-sublabel">Our Product</div>
-          <a href="https://ai.afrifoundry.com" target="_blank" style="color:var(--orange);">AfriFoundry AI ↗</a>
+          <a href="#faq">FAQ</a>
+          <div class="footer-col-sub">Product</div>
+          <a href="https://ai.afrifoundry.com" target="_blank" class="orange">AfriFoundry AI ↗</a>
           <a href="#founding">Founding 100</a>
         </div>
+
+        <!-- Col 2: Contact + Follow -->
         <div class="footer-col">
-          <h4>Connect</h4>
-          <a href="https://twitter.com/afrifoundry" target="_blank">Twitter / X</a>
-          <a href="https://linkedin.com/company/afrifoundry" target="_blank">LinkedIn</a>
-          <a href="/cdn-cgi/l/email-protection#721f130019321314001b141d071c16000b5c111d1f">Email Us</a>
+          <div class="footer-col-label">Contact</div>
+          <a href="/cdn-cgi/l/email-protection#42313732322d3036022324302b242d372c26303b6c212d2f"><span class="__cf_email__" data-cfemail="a1d2d4d1d1ced3d5e1c0c7d3c8c7ced4cfc5d3d88fc2cecc">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#fb9a92bb9a9d89929d948e959f8982d5989496"><span class="__cf_email__" data-cfemail="e08189a081869289868f958e849299ce838f8d">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#49282d24202709282f3b202f263c272d3b30672a2624"><span class="__cf_email__" data-cfemail="1c7d787175725c7d7a6e757a736972786e65327f7371">[email&#160;protected]</span></a>
+          <div class="footer-col-sub">Follow</div>
+          <div class="footer-social-row">
+            <a href="https://twitter.com/afrifoundry" target="_blank" class="footer-social-btn" aria-label="Twitter">
+              <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.743l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://linkedin.com/company/afrifoundry" target="_blank" class="footer-social-btn" aria-label="LinkedIn">
+              <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="/cdn-cgi/l/email-protection#12616762627d6066527374607b747d677c76606b3c717d7f" class="footer-social-btn" aria-label="Email">
+              <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 3: Legal + Newsletter -->
+        <div class="footer-col">
+          <div class="footer-col-label">Legal</div>
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <div class="footer-col-sub">Newsletter</div>
+          <a href="https://www.linkedin.com/newsletters/the-validation-point-7401988315769634816" target="_blank" class="footer-newsletter-pill">
+            📰 The Validation Point →
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bar">
+        <div class="footer-bar-left">
+          <span>© 2026 AfriFoundry</span>
+          <div class="footer-bar-dot"></div>
+          <span>Built in Kenya</span>
+          <div class="footer-bar-dot"></div>
+          <span>10,000+ datapoints</span>
+        </div>
+        <div class="footer-bar-right">
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="#faq">FAQ</a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>Built in Kenya &nbsp;·&nbsp; 10,000+ datapoints &nbsp;·&nbsp; © 2026 AfriFoundry</p>
-        <div class="footer-socials">
-          <a href="https://twitter.com/afrifoundry" target="_blank" class="social-link" aria-label="Twitter">
-            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.743l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://linkedin.com/company/afrifoundry" target="_blank" class="social-link" aria-label="LinkedIn">
-            <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="/cdn-cgi/l/email-protection#442925362f042522362d222b312a20363d6a272b29" class="social-link" aria-label="Email">
-            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
-        </div>
-      </div>
+
     </div>
   </footer>
 
   <div class="launch-toast" id="launchToast">
     <button class="toast-close" onclick="document.getElementById('launchToast').remove()">×</button>
-    <div class="toast-label">AfriFoundry AI — Feb 26</div>
-    <div class="toast-msg">29 spots left in Founding 100. Lifetime access, free forever.</div>
+    <div class="toast-label">AfriFoundry AI — Now Live</div>
+    <div class="toast-msg">Only 16 spots left. Founding members get the best deal — guaranteed.</div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  <script>
-    // NAV
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
+    // Demo accordion
+    const demoAccBtn = document.getElementById('demoAccBtn');
+    const demoAccBody = document.getElementById('demoAccBody');
+    if (demoAccBtn && demoAccBody) {
+      demoAccBtn.addEventListener('click', () => {
+        const isOpen = demoAccBody.classList.toggle('open');
+        demoAccBtn.classList.toggle('open', isOpen);
+        demoAccBtn.querySelector('span').textContent = isOpen ? 'Hide conversation' : 'See a sample conversation';
+      });
+    }
 
-
-    // ACCORDION
+    // What We Do accordion
     document.querySelectorAll('.accordion-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.parentElement;
@@ -1026,21 +1231,53 @@
       });
     });
 
-    // SCROLL FADE
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    // D.R.E.A.M. + TEMIS accordion
+    document.querySelectorAll('.fw-acc-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        item.closest('.fw-acc-list').querySelectorAll('.fw-acc-item').forEach(a => a.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    });
 
-    // SUBSCRIBE
-    function handleSubscribe() {
-      const email = document.getElementById('footerEmail').value.trim();
-      if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
-      alert('You\'re on the list! We\'ll be in touch from AfriFoundry.');
-      document.getElementById('footerEmail').value = '';
+    // Founding Wall search
+    const fwSearch = document.getElementById('fwSearch');
+    const fwNoResults = document.getElementById('fwNoResults');
+    const fwGrid = document.getElementById('fwGrid');
+    const fwMore = document.getElementById('fwMore');
+
+    if (fwSearch) {
+      fwSearch.addEventListener('input', () => {
+        const q = fwSearch.value.toLowerCase().trim();
+        const allCards = document.querySelectorAll('#fwGrid .fw-card');
+
+        if (!q) {
+          // No search — show first 20 only
+          fwGrid.classList.remove('searching');
+          allCards.forEach((card, i) => {
+            card.classList.toggle('fw-hidden', i >= 20);
+            card.classList.remove('match');
+          });
+          fwNoResults.classList.remove('visible');
+          if (fwMore) fwMore.style.display = '';
+        } else {
+          // Searching — show matches across all 100
+          fwGrid.classList.add('searching');
+          if (fwMore) fwMore.style.display = 'none';
+          let found = 0;
+          allCards.forEach(card => {
+            const name = card.getAttribute('data-name') || '';
+            const match = name.includes(q);
+            card.classList.toggle('match', match);
+            card.classList.remove('fw-hidden');
+            if (match && !card.classList.contains('reserved')) found++;
+          });
+          fwNoResults.classList.toggle('visible', found === 0);
+        }
+      });
     }
-  </script>
-</body>
-</html>
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-acc-btn').forEach(btn => {
+      btn.addEventListener(
